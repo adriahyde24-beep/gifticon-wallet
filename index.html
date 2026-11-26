@@ -1,0 +1,2306 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>기프티콘 지갑</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+<meta name="theme-color" content="#0e6f5c">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="기프티콘을 폰 안에서만 저장하고 만료일을 관리하는 단일 파일 앱">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="기프티콘">
+<meta name="application-name" content="기프티콘 지갑">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22:%22%EA%B8%B0%ED%94%84%ED%8B%B0%EC%BD%98%20%EC%A7%80%EA%B0%91%22,%22short_name%22:%22%EA%B8%B0%ED%94%84%ED%8B%B0%EC%BD%98%22,%22description%22:%22%EA%B8%B0%ED%94%84%ED%8B%B0%EC%BD%98%EC%9D%84%20%ED%8F%B0%20%EC%95%88%EC%97%90%EC%84%9C%EB%A7%8C%20%EA%B4%80%EB%A6%AC%ED%95%98%EB%8A%94%20%EC%95%B1%22,%22lang%22:%22ko%22,%22dir%22:%22ltr%22,%22start_url%22:%22./gifticon-manager.html%22,%22scope%22:%22./%22,%22display%22:%22standalone%22,%22orientation%22:%22portrait%22,%22background_color%22:%22%23f3f4f6%22,%22theme_color%22:%22%230e6f5c%22,%22icons%22:%5B%7B%22src%22:%22data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20180%20180%22%20width=%22180%22%20height=%22180%22%3E%3Crect%20width=%22180%22%20height=%22180%22%20rx=%2240%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2230%22%20y=%2252%22%20width=%22120%22%20height=%2276%22%20rx=%2214%22%20fill=%22%23ffffff%22/%3E%3Ccircle%20cx=%2230%22%20cy=%2290%22%20r=%228%22%20fill=%22%230e6f5c%22/%3E%3Ccircle%20cx=%22150%22%20cy=%2290%22%20r=%228%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2246%22%20y=%2268%22%20width=%226%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2256%22%20y=%2268%22%20width=%223%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2263%22%20y=%2268%22%20width=%228%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2275%22%20y=%2268%22%20width=%223%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2282%22%20y=%2268%22%20width=%225%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2291%22%20y=%2268%22%20width=%227%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%22102%22%20y=%2268%22%20width=%223%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%22109%22%20y=%2268%22%20width=%229%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%22122%22%20y=%2268%22%20width=%224%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2260%22%20y=%22108%22%20width=%2260%22%20height=%225%22%20rx=%222.5%22%20fill=%22%230e6f5c%22/%3E%3C/svg%3E%22,%22sizes%22:%22any%22,%22type%22:%22image/svg+xml%22,%22purpose%22:%22any%22%7D,%7B%22src%22:%22data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20180%20180%22%20width=%22180%22%20height=%22180%22%3E%3Crect%20width=%22180%22%20height=%22180%22%20rx=%2240%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2230%22%20y=%2252%22%20width=%22120%22%20height=%2276%22%20rx=%2214%22%20fill=%22%23ffffff%22/%3E%3Ccircle%20cx=%2230%22%20cy=%2290%22%20r=%228%22%20fill=%22%230e6f5c%22/%3E%3Ccircle%20cx=%22150%22%20cy=%2290%22%20r=%228%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2246%22%20y=%2268%22%20width=%226%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2256%22%20y=%2268%22%20width=%223%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2263%22%20y=%2268%22%20width=%228%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2275%22%20y=%2268%22%20width=%223%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2282%22%20y=%2268%22%20width=%225%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2291%22%20y=%2268%22%20width=%227%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%22102%22%20y=%2268%22%20width=%223%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%22109%22%20y=%2268%22%20width=%229%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%22122%22%20y=%2268%22%20width=%224%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2260%22%20y=%22108%22%20width=%2260%22%20height=%225%22%20rx=%222.5%22%20fill=%22%230e6f5c%22/%3E%3C/svg%3E%22,%22sizes%22:%22any%22,%22type%22:%22image/svg+xml%22,%22purpose%22:%22maskable%22%7D,%7B%22src%22:%22data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACQ0lEQVR42u3dQVLCQBRFUdKVsWwQ1iBLcQ+ukB04YwAUZSi7f157ztCyJLSX34QgLh+fpwM80ywB4kAciANxIA7EgTgQB+JAHCAOxIE4EAfiQByIA3EgDsQB4kAciANxIA7EgTgQB+JAHCAOxIE4EAfiQByIA3EgDsSBOEAciANxIA7EgTgQB+JAHPw/a+FtX7++/QJ+43g5l9zuMv4fAGoipZKmjCCDV2/c5JBF3AhpyjBCKuNQRuiqOpWlLg5jI3dtmzL0YVtBHETEYU9J31lMDsSBOBAHI6x7O6C7S0q3Z1u3rz9+5Y3vf/1DNt3upiN8fTAmB7YVxIE4EAeIA3EgDsSBOBAH4kAcTKjjVdnHq5R0WuG8OO7ug0SCshi9rVR9yIQyMp5z6CNrDdvE900ZzlaYKA7DI2XdTA7EgTgQB5PG4aXSlHUzOdhNHMZG0Oo1ZeijPg5lxK3kKovcPnq/Ztrxs881MUynSpytIA7EgTgQB+JAHIiDWay5hx70XtTQ1wObMhztVHEkrnXiMXvOwVxxJG7hicecOjmy1jr0CWnw2Yq3BJgciANxII7UM/tE/dbZ5EAc7C0OO0vunjJicugjd21tK5TGYXiErmqb5p4o4891/HPIp1wQCXqY+ZBaZexmcpgiQY+oyjhwtoI4EAfiAHEgDsSBOBAH4kAciANxIA7EAeJAHIgDcSAOxIE4EAfiQBwgDsSBOBAH4kAciANxIA7EAeJAHIgDcSAOxIE4EAfiQByIA8SBOBAH4qDID3oPlF/CectYAAAAAElFTkSuQmCC%22,%22sizes%22:%22180x180%22,%22type%22:%22image/png%22,%22purpose%22:%22any%22%7D%5D%7D">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20180%20180%22%20width=%22180%22%20height=%22180%22%3E%3Crect%20width=%22180%22%20height=%22180%22%20rx=%2240%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2230%22%20y=%2252%22%20width=%22120%22%20height=%2276%22%20rx=%2214%22%20fill=%22%23ffffff%22/%3E%3Ccircle%20cx=%2230%22%20cy=%2290%22%20r=%228%22%20fill=%22%230e6f5c%22/%3E%3Ccircle%20cx=%22150%22%20cy=%2290%22%20r=%228%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2246%22%20y=%2268%22%20width=%226%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2256%22%20y=%2268%22%20width=%223%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2263%22%20y=%2268%22%20width=%228%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2275%22%20y=%2268%22%20width=%223%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2282%22%20y=%2268%22%20width=%225%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2291%22%20y=%2268%22%20width=%227%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%22102%22%20y=%2268%22%20width=%223%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%22109%22%20y=%2268%22%20width=%229%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%22122%22%20y=%2268%22%20width=%224%22%20height=%2230%22%20fill=%22%230e6f5c%22/%3E%3Crect%20x=%2260%22%20y=%22108%22%20width=%2260%22%20height=%225%22%20rx=%222.5%22%20fill=%22%230e6f5c%22/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACQ0lEQVR42u3dQVLCQBRFUdKVsWwQ1iBLcQ+ukB04YwAUZSi7f157ztCyJLSX34QgLh+fpwM80ywB4kAciANxIA7EgTgQB+JAHCAOxIE4EAfiQByIA3EgDsQB4kAciANxIA7EgTgQB+JAHCAOxIE4EAfiQByIA3EgDsSBOEAciANxIA7EgTgQB+JAHPw/a+FtX7++/QJ+43g5l9zuMv4fAGoipZKmjCCDV2/c5JBF3AhpyjBCKuNQRuiqOpWlLg5jI3dtmzL0YVtBHETEYU9J31lMDsSBOBAHI6x7O6C7S0q3Z1u3rz9+5Y3vf/1DNt3upiN8fTAmB7YVxIE4EAeIA3EgDsSBOBAH4kAcTKjjVdnHq5R0WuG8OO7ug0SCshi9rVR9yIQyMp5z6CNrDdvE900ZzlaYKA7DI2XdTA7EgTgQB5PG4aXSlHUzOdhNHMZG0Oo1ZeijPg5lxK3kKovcPnq/Ztrxs881MUynSpytIA7EgTgQB+JAHIiDWay5hx70XtTQ1wObMhztVHEkrnXiMXvOwVxxJG7hicecOjmy1jr0CWnw2Yq3BJgciANxII7UM/tE/dbZ5EAc7C0OO0vunjJicugjd21tK5TGYXiErmqb5p4o4891/HPIp1wQCXqY+ZBaZexmcpgiQY+oyjhwtoI4EAfiAHEgDsSBOBAH4kAciANxIA7EAeJAHIgDcSAOxIE4EAfiQBwgDsSBOBAH4kAciANxIA7EAeJAHIgDcSAOxIE4EAfiQByIA8SBOBAH4qDID3oPlF/CectYAAAAAElFTkSuQmCC">
+<style>
+:root{
+  --bg:#f3f4f6; --card:#ffffff; --ink:#171a1c; --sub:#6b7280; --line:#e4e6ea;
+  --brand:#0e6f5c; --brand-ink:#0a5648; --tint:#e7f1ee;
+  --warn:#a4530b; --warn-tint:#fdf1e4; --warn-line:#f3ddc4;
+  --danger:#a52020; --danger-tint:#fbeaea;
+  --done:#5c626a; --done-tint:#edeef1;
+  --r:16px;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  font-size:16px; line-height:1.45; -webkit-tap-highlight-color:transparent;
+  overscroll-behavior-y:contain;
+}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;min-height:44px;cursor:pointer;-webkit-appearance:none;appearance:none;}
+input,select,textarea{font:inherit;color:inherit;}
+input,textarea{-webkit-appearance:none;appearance:none;}
+input[type=checkbox]{-webkit-appearance:auto;appearance:auto;}
+h1,h2,h3,p,ul,li{margin:0;padding:0;}
+ul{list-style:none;}
+:focus-visible{outline:3px solid #0e6f5c;outline-offset:2px;}
+[hidden]{display:none !important;}
+
+.app{max-width:560px;margin:0 auto;padding-bottom:calc(88px + env(safe-area-inset-bottom));}
+
+/* ── 상단 바 ── */
+.topbar{
+  position:sticky;top:0;z-index:20;background:#fff;
+  border-bottom:1px solid var(--line);
+  padding:calc(10px + env(safe-area-inset-top)) 14px 10px;
+}
+.trow{display:flex;align-items:center;gap:8px;}
+.h1{font-size:19px;font-weight:800;letter-spacing:-.4px;}
+.count{display:inline-block;background:var(--tint);color:var(--brand-ink);border-radius:999px;padding:2px 8px;font-size:12px;font-weight:800;margin-left:6px;vertical-align:2px;}
+.iconbtn{
+  width:44px;height:44px;min-height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-size:19px;color:#3d434a;background:#f4f6f7;flex:0 0 auto;
+}
+.search{position:relative;margin-top:10px;display:flex;align-items:center;}
+.search svg{position:absolute;left:12px;width:17px;height:17px;pointer-events:none;}
+.search input{
+  width:100%;min-height:46px;border:1px solid var(--line);border-radius:12px;background:#f8f9fa;
+  padding:0 12px 0 36px;font-size:15px;
+}
+.search input::placeholder{color:#9aa1a9;}
+.tabs{display:flex;gap:6px;margin-top:10px;}
+.tab{
+  flex:1;min-height:44px;border-radius:12px;background:#f1f2f4;color:var(--sub);
+  font-size:13.5px;font-weight:800;letter-spacing:-.2px;
+}
+.tab.on{background:var(--brand);color:#fff;}
+.tab .n{font-weight:700;opacity:.85;}
+
+/* ── 요약 ── */
+.insight{
+  margin:12px 14px 0;padding:10px 12px;border-radius:14px;border:1px solid var(--warn-line);
+  background:var(--warn-tint);color:#7c3a06;font-size:13.5px;display:flex;gap:10px;align-items:center;
+}
+.insight .grow{flex:1;line-height:1.4;}
+.insight b{font-weight:800;}
+.mini{
+  min-height:44px;padding:0 12px;border-radius:10px;background:#fff;border:1px solid var(--warn-line);
+  color:#7c3a06;font-size:13px;font-weight:800;flex:0 0 auto;
+}
+
+/* ── 목록 ── */
+.list{padding:12px 14px;display:flex;flex-direction:column;gap:10px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 13px 10px;
+  box-shadow:0 1px 2px rgba(16,24,40,.045);
+}
+.card.done{background:#fbfbfc;}
+.card.done .c-name{color:#8a9099;text-decoration:line-through;}
+.card.expired{background:#fbfbfc;}
+.c-head{display:flex;align-items:flex-start;gap:8px;}
+.c-head .txt{min-width:0;flex:1;}
+.c-brand{display:inline-block;font-size:12px;font-weight:800;color:var(--brand-ink);background:var(--tint);border-radius:6px;padding:2px 7px;margin-bottom:5px;}
+.c-name{font-size:16px;font-weight:800;letter-spacing:-.3px;word-break:break-all;}
+.c-meta{font-size:13px;color:var(--sub);margin-top:4px;word-break:break-all;}
+.c-meta .amt{font-weight:800;color:var(--ink);}
+.dday{
+  margin-left:auto;flex:0 0 auto;font-size:12.5px;font-weight:800;border-radius:999px;
+  padding:5px 10px;background:var(--tint);color:var(--brand-ink);white-space:nowrap;
+}
+.dday.soon{background:var(--warn-tint);color:var(--warn);}
+.dday.today{background:var(--danger-tint);color:var(--danger);}
+.dday.expired,.dday.done{background:var(--done-tint);color:var(--done);}
+.bcbox{
+  margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:8px 8px 5px;display:block;width:100%;text-align:center;
+}
+.bcbox canvas{display:block;width:100%;height:54px;}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;letter-spacing:1.2px;color:#3a4046;margin-top:4px;word-break:break-all;}
+.acts{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap;}
+.btn{
+  min-height:44px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:#fff;
+  font-size:13.5px;font-weight:800;color:var(--ink);flex:1 1 auto;white-space:nowrap;
+}
+.btn.brand{background:var(--brand);border-color:var(--brand);color:#fff;}
+.btn.soft{background:#f2f4f5;color:#3a4046;}
+.btn.danger{background:#fff;border-color:#eccfcf;color:var(--danger);}
+.btn.wide{width:100%;display:flex;align-items:center;justify-content:center;margin-bottom:8px;flex:none;}
+.btn[disabled]{opacity:.45;}
+
+/* ── 빈 화면 ── */
+.empty{padding:44px 22px 20px;text-align:center;color:var(--sub);font-size:14px;line-height:1.6;}
+.empty .big{font-size:34px;display:block;margin-bottom:10px;}
+
+/* ── 하단 등록 바 ── */
+.bottom{
+  position:fixed;left:0;right:0;bottom:0;z-index:15;background:#fff;border-top:1px solid var(--line);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+}
+.bottom .inner{max-width:560px;margin:0 auto;}
+.btnprimary{
+  width:100%;min-height:54px;border-radius:14px;background:var(--brand);color:#fff;
+  font-size:16.5px;font-weight:800;letter-spacing:-.2px;display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.btnprimary:active{background:var(--brand-ink);}
+
+/* ── 시트(모달) ── */
+.sheetwrap{position:fixed;inset:0;z-index:60;display:none;}
+.sheetwrap.on{display:block;}
+.backdrop{position:absolute;inset:0;background:rgba(12,18,22,.42);}
+.sheet{
+  position:absolute;left:0;right:0;bottom:0;background:#fff;
+  border-radius:20px 20px 0 0;max-height:94dvh;max-height:94vh;display:flex;flex-direction:column;
+  animation:sheetup .18s ease-out;
+  max-width:560px;margin:0 auto;
+}
+@keyframes sheetup{from{transform:translateY(14px);opacity:.5;}to{transform:none;opacity:1;}}
+@media (prefers-reduced-motion:reduce){.sheet{animation:none;}}
+.sheethead{
+  display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);
+  flex:0 0 auto;
+}
+.sheethead h2{font-size:16.5px;font-weight:800;letter-spacing:-.3px;flex:1;min-width:0;}
+.sheetbody{padding:14px;overflow-y:auto;-webkit-overflow-scrolling:touch;flex:1 1 auto;}
+.sheetfoot{
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line);
+  display:flex;gap:8px;flex:0 0 auto;background:#fff;
+}
+.sheetfoot .btn{flex:0 0 auto;min-width:96px;}
+.sheetfoot .btnprimary{flex:1 1 auto;min-height:50px;}
+
+/* ── 폼 ── */
+.field{margin-bottom:12px;}
+.lbl{display:block;font-size:12.5px;font-weight:800;color:var(--sub);margin-bottom:6px;letter-spacing:-.1px;}
+.inp{
+  width:100%;min-height:48px;border:1px solid var(--line);border-radius:12px;background:#fff;
+  padding:0 12px;font-size:16px;
+}
+textarea.inp{min-height:92px;padding:10px 12px;line-height:1.5;resize:vertical;}
+.inp::placeholder{color:#a4aab1;font-size:14.5px;}
+.row2{display:flex;gap:8px;}
+.row2>*{flex:1 1 0;min-width:0;}
+.row2>.fix{flex:0 0 auto;}
+.check{
+  display:flex;align-items:center;gap:10px;min-height:48px;border:1px solid var(--line);
+  border-radius:12px;padding:0 12px;background:#fff;font-size:14px;font-weight:700;
+}
+.check input[type=checkbox]{width:24px;height:24px;min-height:24px;margin:0;accent-color:var(--brand);flex:0 0 auto;border-radius:6px;}
+.hint{font-size:12.5px;color:var(--sub);line-height:1.55;margin-top:6px;}
+.hint.ok{color:var(--brand-ink);font-weight:700;}
+.hint.err{color:var(--danger);font-weight:700;}
+.quick{display:flex;gap:8px;}
+.quick>*{flex:1 1 0;min-width:0;}
+.filebtn{
+  display:flex;align-items:center;justify-content:center;gap:6px;min-height:44px;border-radius:10px;
+  border:1px solid var(--line);background:#f7f8f9;font-size:13.5px;font-weight:800;
+}
+.thumb{margin-top:10px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#f7f8f9;}
+.thumb img{display:block;width:100%;max-height:190px;object-fit:contain;}
+details.paste{border:1px solid var(--line);border-radius:12px;background:#fafbfb;margin-bottom:12px;}
+details.paste summary{
+  min-height:44px;display:flex;align-items:center;padding:0 12px;font-size:13.5px;font-weight:800;color:#3a4046;
+  cursor:pointer;
+}
+details.paste .body{padding:0 10px 10px;}
+details.paste textarea{font-size:14.5px;min-height:84px;}
+details.paste .btn{margin-top:8px;width:100%;display:block;}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 4px;}
+.chip{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13.5px;font-weight:800;color:#3a4046;}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff;}
+.hist{border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+.hist li{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;font-size:13px;border-bottom:1px solid var(--line);}
+.hist li:last-child{border-bottom:0;}
+.hist .h-m{color:var(--sub);}
+
+/* ── 큰 바코드 ── */
+.bigbc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 10px 8px;text-align:center;}
+.bigbc canvas{display:block;width:100%;height:132px;}
+.bigcode{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:16px;letter-spacing:2.4px;margin-top:8px;font-weight:700;}
+.qrwrap{display:flex;justify-content:center;margin-top:6px;}
+.qrwrap canvas{width:232px;height:232px;display:block;}
+
+/* ── 설정 ── */
+.block{border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px;background:#fff;}
+.blk{font-size:13px;font-weight:800;color:var(--sub);margin-bottom:8px;letter-spacing:-.1px;}
+.stat{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13.5px;padding:9px 0;border-bottom:1px solid var(--line);}
+.stat:last-of-type{border-bottom:0;}
+.stat .k{display:flex;align-items:center;gap:7px;font-weight:700;color:#3a4046;}
+.stat .v{color:var(--sub);text-align:right;font-size:13px;}
+.dot{width:8px;height:8px;border-radius:50%;background:#12a37a;flex:0 0 auto;}
+.dot.off{background:#c2410c;}
+
+/* ── ICS ── */
+.days{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.days .check{min-height:46px;font-size:13.5px;}
+.pick{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:6px;}
+.pick li{border-bottom:1px solid var(--line);}
+.pick li:last-child{border-bottom:0;}
+.pick .check{border:0;border-radius:0;background:#fff;min-height:52px;gap:10px;}
+.pick .ptxt{flex:1;min-width:0;font-size:13.5px;font-weight:700;}
+.pick .psub{display:block;font-size:12px;color:var(--sub);font-weight:600;margin-top:1px;}
+
+/* ── 토스트 ── */
+.toast{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:calc(100px + env(safe-area-inset-bottom));
+  background:#1e2327;color:#fff;padding:11px 16px;border-radius:12px;font-size:13.5px;line-height:1.4;
+  z-index:90;max-width:86vw;text-align:center;opacity:0;transition:opacity .18s;pointer-events:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+.toast.on{opacity:1;}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="topbar">
+    <div class="trow">
+      <div class="h1">기프티콘 지갑<span class="count" id="cntTop">0</span></div>
+      <button class="iconbtn" id="btnSettings" aria-label="설정과 백업" title="설정·백업">&#9881;</button>
+    </div>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#9aa1a9" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <input id="fSearch" type="search" inputmode="search" autocomplete="off" placeholder="상품명·브랜드·쿠폰번호·메모 검색" aria-label="검색">
+    </div>
+    <div class="tabs" role="tablist" aria-label="목록 구분">
+      <button class="tab on" id="tabAvail" role="tab" aria-selected="true" data-tab="avail">사용 가능 <span class="n" id="cntAvail">0</span></button>
+      <button class="tab" id="tabDone" role="tab" aria-selected="false" data-tab="done">완료·만료 <span class="n" id="cntDone">0</span></button>
+    </div>
+  </header>
+
+  <div class="insight" id="insight" hidden>
+    <div class="grow" id="insightTxt"></div>
+    <button class="mini" id="btnInsightIcs" type="button">알림 넣기</button>
+  </div>
+
+  <main id="list" class="list" aria-live="polite"></main>
+  <div class="empty" id="empty" hidden></div>
+
+  <footer class="bottom">
+    <div class="inner">
+      <button class="btnprimary" id="btnAdd" type="button"><span aria-hidden="true">＋</span> 기프티콘 등록</button>
+    </div>
+  </footer>
+</div>
+
+<!-- ══ 등록·수정 ══ -->
+<div class="sheetwrap" id="sheetEdit">
+  <div class="backdrop" data-close="1"></div>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+    <div class="sheethead">
+      <h2 id="editTitle">기프티콘 등록</h2>
+      <button class="iconbtn" type="button" data-close="1" aria-label="닫기">&#10005;</button>
+    </div>
+    <div class="sheetbody">
+      <div class="quick">
+        <label class="filebtn" for="fImage">&#128247; 사진 선택</label>
+        <input type="file" id="fImage" accept="image/*" hidden>
+        <button class="filebtn" id="btnReadImage" type="button" disabled>사진에서 읽기</button>
+      </div>
+      <div class="hint" id="ocrStatus">사진은 폰 밖으로 나가지 않아요. 이 브라우저 안에서만 번호와 만료일을 읽어요.</div>
+      <div class="thumb" id="thumbWrap" hidden><img id="thumbImg" alt="기프티콘 사진"></div>
+
+      <details class="paste" id="pasteBox">
+        <summary>문자·카톡 내용 붙여넣어 자동 입력</summary>
+        <div class="body">
+          <textarea class="inp" id="fPaste" placeholder="예) 스타벅스 아메리카노 Tall&#10;쿠폰번호 1234 5678 9012 3456&#10;유효기간 2026.12.22까지"></textarea>
+          <button class="btn" id="btnParsePaste" type="button">번호·만료일·브랜드 추출</button>
+        </div>
+      </details>
+
+      <div class="field"><label class="lbl" for="fBrand">브랜드</label><input class="inp" id="fBrand" autocomplete="off" placeholder="예) 스타벅스"></div>
+      <div class="field"><label class="lbl" for="fName">상품명</label><input class="inp" id="fName" autocomplete="off" placeholder="예) 아메리카노 Tall"></div>
+      <div class="field"><label class="lbl" for="fCode">쿠폰 번호</label><input class="inp" id="fCode" inputmode="numeric" autocomplete="off" placeholder="예) 1234 5678 9012 3456"></div>
+      <div class="field"><label class="lbl" for="fExpiry">만료일</label><input class="inp" id="fExpiry" type="date"></div>
+
+      <label class="check" style="margin-bottom:10px"><input type="checkbox" id="fIsValue"><span>금액권이에요 (잔액 차감 관리)</span></label>
+      <div id="valueFields" hidden>
+        <div class="row2">
+          <div class="field"><label class="lbl" for="fInit">초기 금액</label><input class="inp" id="fInit" inputmode="numeric" placeholder="10000"></div>
+          <div class="field"><label class="lbl" for="fBalance">현재 잔액</label><input class="inp" id="fBalance" inputmode="numeric" placeholder="8000"></div>
+        </div>
+      </div>
+
+      <div class="field"><label class="lbl" for="fNote">메모</label><input class="inp" id="fNote" autocomplete="off" placeholder="예) 엄마가 준 것 · 12월에 쓰기"></div>
+
+      <div class="field">
+        <span class="lbl">미리보기 (매장에서 보여주기)</span>
+        <div class="bcbox" style="margin-top:0">
+          <canvas id="pvCanvas" aria-hidden="true"></canvas>
+          <div class="code" id="pvCode">번호를 넣으면 바코드가 그려져요</div>
+        </div>
+        <div class="chips">
+          <button class="chip on" type="button" data-pv="barcode">1D 바코드</button>
+          <button class="chip" type="button" data-pv="qr">QR 코드</button>
+        </div>
+      </div>
+
+      <div id="histBox" hidden>
+        <span class="lbl">차감 내역</span>
+        <ul class="hist" id="histList"></ul>
+      </div>
+    </div>
+    <div class="sheetfoot">
+      <button class="btn danger" id="btnDelete" type="button" hidden>삭제</button>
+      <button class="btnprimary" id="btnSave" type="button">저장</button>
+    </div>
+  </section>
+</div>
+
+<!-- ══ 바코드 크게 보기 ══ -->
+<div class="sheetwrap" id="sheetBarcode">
+  <div class="backdrop" data-close="1"></div>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="bcTitle">
+    <div class="sheethead">
+      <h2 id="bcTitle">매장에서 보여주기</h2>
+      <button class="iconbtn" type="button" data-close="1" aria-label="닫기">&#10005;</button>
+    </div>
+    <div class="sheetbody">
+      <div class="bigbc">
+        <canvas id="bcCanvas" aria-hidden="true"></canvas>
+        <div class="bigcode" id="bcCode"></div>
+      </div>
+      <div class="qrwrap"><canvas id="qrCanvas" aria-hidden="true"></canvas></div>
+      <div class="hint" id="bcHint">화면 밝기를 올리고 점원에게 보여주세요.</div>
+    </div>
+    <div class="sheetfoot"><button class="btnprimary" type="button" data-close="1">닫기</button></div>
+  </section>
+</div>
+
+<!-- ══ 잔액 사용 ══ -->
+<div class="sheetwrap" id="sheetBalance">
+  <div class="backdrop" data-close="1"></div>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="bsTitle">
+    <div class="sheethead">
+      <h2 id="bsTitle">잔액 사용</h2>
+      <button class="iconbtn" type="button" data-close="1" aria-label="닫기">&#10005;</button>
+    </div>
+    <div class="sheetbody">
+      <div class="block" style="margin-bottom:14px">
+        <div class="stat"><span class="k">남은 잔액</span><span class="v" id="bsBalance">0원</span></div>
+        <div class="stat"><span class="k">처음 금액</span><span class="v" id="bsInit">0원</span></div>
+        <div class="stat"><span class="k">만료일</span><span class="v" id="bsExpiry">-</span></div>
+      </div>
+      <div class="field">
+        <label class="lbl" for="bsAmount">사용한 금액</label>
+        <input class="inp" id="bsAmount" inputmode="numeric" placeholder="예) 4500">
+      </div>
+      <div class="chips">
+        <button class="chip" type="button" data-amt="1000">1,000원</button>
+        <button class="chip" type="button" data-amt="3000">3,000원</button>
+        <button class="chip" type="button" data-amt="5000">5,000원</button>
+        <button class="chip" type="button" data-amt="all">전액</button>
+      </div>
+      <div class="field" style="margin-top:10px">
+        <label class="lbl" for="bsNote">어디에 썼나요 (선택)</label>
+        <input class="inp" id="bsNote" autocomplete="off" placeholder="예) 정관점 아메리카노">
+      </div>
+      <div id="bsHistBox" hidden>
+        <span class="lbl">차감 내역</span>
+        <ul class="hist" id="bsHist"></ul>
+      </div>
+    </div>
+    <div class="sheetfoot">
+      <button class="btn" type="button" data-close="1">취소</button>
+      <button class="btnprimary" id="btnSpend" type="button">차감하기</button>
+    </div>
+  </section>
+</div>
+
+<!-- ══ 캘린더 내보내기 ══ -->
+<div class="sheetwrap" id="sheetIcs">
+  <div class="backdrop" data-close="1"></div>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="icsTitle">
+    <div class="sheethead">
+      <h2 id="icsTitle">만료 알림 캘린더</h2>
+      <button class="iconbtn" type="button" data-close="1" aria-label="닫기">&#10005;</button>
+    </div>
+    <div class="sheetbody">
+      <span class="lbl">알림 날짜 (여러 개 선택)</span>
+      <div class="days" id="dayGrid">
+        <label class="check"><input type="checkbox" value="0">당일</label>
+        <label class="check"><input type="checkbox" value="1">1일 전</label>
+        <label class="check"><input type="checkbox" value="3">3일 전</label>
+        <label class="check"><input type="checkbox" value="7">7일 전</label>
+        <label class="check"><input type="checkbox" value="14">14일 전</label>
+      </div>
+      <div class="row2" style="margin-top:8px">
+        <input class="inp" id="fCustom" type="number" min="0" max="365" inputmode="numeric" placeholder="직접 입력 (일 전)">
+        <button class="btn fix" id="btnAddCustom" type="button" style="min-width:84px;min-height:48px">추가</button>
+      </div>
+      <div class="chips" id="customChips"></div>
+
+      <span class="lbl" style="margin-top:14px">쿠폰 선택</span>
+      <div class="row2" style="margin-bottom:6px">
+        <button class="btn soft" id="btnSelAll" type="button">전체 선택</button>
+        <button class="btn soft" id="btnSelNone" type="button">선택 해제</button>
+      </div>
+      <ul class="pick" id="icsList"></ul>
+      <div class="hint" id="icsCount">알림 0개</div>
+    </div>
+    <div class="sheetfoot"><button class="btnprimary" id="btnIcsDownload" type="button">.ics 파일 내려받기</button></div>
+  </section>
+</div>
+
+<!-- ══ 설정·백업 ══ -->
+<div class="sheetwrap" id="sheetSettings">
+  <div class="backdrop" data-close="1"></div>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+    <div class="sheethead">
+      <h2 id="setTitle">설정·백업</h2>
+      <button class="iconbtn" type="button" data-close="1" aria-label="닫기">&#10005;</button>
+    </div>
+    <div class="sheetbody">
+      <div class="block">
+        <h3 class="blk">저장 상태 (이 폰 안)</h3>
+        <div class="stat"><span class="k"><i class="dot" id="dotIdb"></i>IndexedDB</span><span class="v" id="stIdb">확인 중</span></div>
+        <div class="stat"><span class="k"><i class="dot" id="dotLs"></i>localStorage</span><span class="v" id="stLs">확인 중</span></div>
+        <div class="stat"><span class="k">자동 복구</span><span class="v" id="stRec">없음</span></div>
+        <div class="hint" id="stNote">한쪽 저장소가 비면 다른 쪽 사본에서 자동으로 되살려요. 서버로 보내는 데이터는 없어요.</div>
+        <button class="btn wide" id="btnBackupNow" type="button" style="margin-top:10px;margin-bottom:0">지금 저장하고 상태 새로고침</button>
+      </div>
+      <div class="block">
+        <h3 class="blk">백업 · 복원</h3>
+        <button class="btn wide" id="btnExport" type="button">JSON으로 내보내기 (사진 포함)</button>
+        <label class="btn wide" for="fImport">JSON 파일 가져오기</label>
+        <input type="file" id="fImport" accept="application/json,.json" hidden>
+        <div class="hint">내보낸 JSON은 카톡 '나에게 보내기'나 드라이브에 두면 폰을 바꿔도 되살릴 수 있어요.</div>
+      </div>
+      <div class="block">
+        <h3 class="blk">만료 알림</h3>
+        <button class="btn wide" id="btnIcsAll" type="button">캘린더(.ics)로 내보내기</button>
+        <div class="hint">당일·1일 전·3일 전 등 원하는 날짜마다 알림을 만들어 폰 기본 캘린더에 넣어요.</div>
+      </div>
+      <div class="block">
+        <h3 class="blk">앱</h3>
+        <button class="btn wide" id="btnInstall" type="button">홈 화면에 추가</button>
+        <div class="hint">이 파일 하나로 도는 앱이에요. 로그인·광고·분석 도구를 쓰지 않아요.<br>버전 <span id="verTxt">1.0.0</span> · 쿠폰 <span id="stCount">0</span>개</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══ 확인 ══ -->
+<div class="sheetwrap" id="sheetConfirm">
+  <div class="backdrop" data-close="1"></div>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="cfTitle">
+    <div class="sheethead">
+      <h2 id="cfTitle">확인</h2>
+      <button class="iconbtn" type="button" data-close="1" aria-label="닫기">&#10005;</button>
+    </div>
+    <div class="sheetbody"><div id="cfMsg" style="font-size:14.5px;line-height:1.6;color:#33383d"></div></div>
+    <div class="sheetfoot">
+      <button class="btn" id="cfCancel" type="button">취소</button>
+      <button class="btnprimary" id="cfOk" type="button">확인</button>
+    </div>
+  </section>
+</div>
+
+<!-- ══ 가져오기 방식 ══ -->
+<div class="sheetwrap" id="sheetImport">
+  <div class="backdrop" data-close="1"></div>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="imTitle">
+    <div class="sheethead">
+      <h2 id="imTitle">가져오기</h2>
+      <button class="iconbtn" type="button" data-close="1" aria-label="닫기">&#10005;</button>
+    </div>
+    <div class="sheetbody">
+      <div id="imMsg" style="font-size:14.5px;line-height:1.6;margin-bottom:14px"></div>
+      <button class="btn wide" id="btnImMerge" type="button" style="min-height:52px">지금 목록에 합치기 (추천)</button>
+      <button class="btn wide danger" id="btnImReplace" type="button" style="min-height:52px">전부 지우고 이 파일로 바꾸기</button>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><div class="empty">이 앱을 쓰려면 브라우저에서 자바스크립트를 켜 주세요.</div></noscript>
+
+<script>
+/* =========================================================================
+   기프티콘 지갑 v1.0.0
+   - 단일 HTML 파일 / 로그인·광고·분석도구 없음 / 모든 데이터는 이 폰 안에서만
+   - 아래 LOGIC 영역은 DOM 없이도 실행되는 순수 로직(검증용으로 window.GM에 노출)
+   ========================================================================= */
+(function () {
+  'use strict';
+
+  var VERSION = '1.0.0';
+  var LS_KEY = 'gifticon_manager_v1';
+  var IDB_NAME = 'gifticon_manager';
+  var IDB_STORE = 'state';
+  var LS_BUDGET = 4600000; /* localStorage 5MB 중 여유를 둔 한도(바이트) */
+
+  /* ────────────────────────── 1. 기본 유틸 ────────────────────────── */
+  function pad2(n) { return (n < 10 ? '0' : '') + n; }
+  function trim(s) { return String(s == null ? '' : s).replace(/^\s+|\s+$/g, ''); }
+  function isoOf(d) { return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
+  function todayISO() { return isoOf(new Date()); }
+
+  function dateFromISO(iso) {
+    var p = String(iso || '').split('-');
+    if (p.length !== 3) return null;
+    var y = +p[0], m = +p[1], d = +p[2];
+    if (!y || !m || !d) return null;
+    if (y < 1900 || y > 2200) return null;
+    var dt = new Date(y, m - 1, d);
+    if (dt.getFullYear() !== y || dt.getMonth() !== m - 1 || dt.getDate() !== d) return null;
+    return dt;
+  }
+  function dayNum(iso) {
+    var d = dateFromISO(iso);
+    if (!d) return null;
+    return Math.round(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
+  }
+  function daysLeft(iso, today) {
+    var a = dayNum(iso), b = dayNum(today || todayISO());
+    if (a === null || b === null) return null;
+    return a - b;
+  }
+  function addDaysISO(iso, n) {
+    var d = dateFromISO(iso);
+    if (!d) return null;
+    var t = new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+    return isoOf(t);
+  }
+  function normYMD(y, mo, d) {
+    var yy = +y, mm = +mo, dd = +d;
+    if (yy < 100) yy += 2000;
+    if (yy < 1980 || yy > 2099) return null;
+    if (!(mm >= 1 && mm <= 12) || !(dd >= 1 && dd <= 31)) return null;
+    var dt = new Date(yy, mm - 1, dd);
+    if (dt.getFullYear() !== yy || dt.getMonth() !== mm - 1 || dt.getDate() !== dd) return null;
+    return yy + '-' + pad2(mm) + '-' + pad2(dd);
+  }
+  function fmtDate(iso) {
+    var d = dateFromISO(iso);
+    if (!d) return String(iso || '-');
+    return d.getFullYear() + '.' + pad2(d.getMonth() + 1) + '.' + pad2(d.getDate()) +
+      ' (' + '일월화수목금토'.charAt(d.getDay()) + ')';
+  }
+  function fmtWon(n) {
+    var v = Math.round(Number(n) || 0);
+    return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원';
+  }
+  function digits(s) { return String(s == null ? '' : s).replace(/[^0-9]/g, ''); }
+  function fmtCode(code) {
+    var d = String(code == null ? '' : code);
+    if (!d) return '';
+    if (/^[0-9]+$/.test(d)) return d.replace(/(.{4})/g, '$1 ').replace(/\s+$/, '');
+    return d;
+  }
+  function uid() {
+    return 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  }
+  function escHTML(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function utf8len(str) {
+    var s = String(str), n = 0;
+    for (var i = 0; i < s.length; i++) {
+      var c = s.charCodeAt(i);
+      if (c < 0x80) n += 1;
+      else if (c < 0x800) n += 2;
+      else if (c >= 0xd800 && c <= 0xdbff) { n += 4; i++; }
+      else n += 3;
+    }
+    return n;
+  }
+  function timeStr(ms) {
+    if (!ms) return '-';
+    var d = new Date(ms);
+    return pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+  }
+  function nowISO() { return new Date().toISOString(); }
+
+  /* ────────────────────── 2. 문자·카톡 텍스트 파싱 ────────────────────── */
+  var BRANDS = [
+    '스타벅스', '투썸플레이스', '투썸', '이디야커피', '이디야', '메가커피', '컴포즈커피', '컴포즈',
+    '빽다방', '파스쿠찌', '커피빈', '폴바셋', '더벤티', '매머드커피', '탐앤탐스', '할리스',
+    '파리바게뜨', '뚜레쥬르', '배스킨라빈스', '베스킨라빈스', '던킨', '크리스피크림',
+    '맥도날드', '버거킹', '롯데리아', '맘스터치', 'KFC', '서브웨이', '노브랜드버거',
+    '이마트24', '이마트', 'GS25', 'CU', '세븐일레븐', '올리브영', '다이소', '홈플러스', '롯데마트', '코스트코',
+    'CGV', '롯데시네마', '메가박스', '교보문고', '영풍문고', '예스24',
+    '네이버', '카카오', '쿠팡', '배달의민족', '요기요', '무신사', '지그재그',
+    'BHC', 'BBQ', '교촌', '굽네', '푸라닭', '네네치킨', '도미노피자', '피자헛', '파파존스',
+    '한솥', '본죽', '본도시락', '김밥천국', '엽기떡볶이', '신전떡볶이', '죠스떡볶이',
+    '샐러디', '쉐이크쉑', '아웃백', '빕스', '애슐리', '미스터피자',
+    '현대백화점', '신세계', '롯데백화점', '이케아', '스타필드', '아리따움', '미샤', '이니스프리',
+    '밀리의서재', '윌라', '리디', '왓챠', '넷플릭스', '티빙', '웨이브', '멜론', '지니뮤직',
+    '하나투어', '모두투어', '노랑풍선', '대한항공', '아시아나', '제주항공', '진에어', '티웨이', '에어부산',
+    '롯데호텔', '조선호텔', '호텔신라', '소노호텔', '아난티', '골프존'
+  ].sort(function (a, b) { return b.length - a.length; });
+
+  var DATE_RE = /(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일|(\d{2,4})\s*[.\-\/]\s*(\d{1,2})\s*[.\-\/]\s*(\d{1,2})/g;
+  var KW_RE = /(유효\s*기간|유효기간|만료\s*일?|사용\s*기한|까지)/g;
+
+  function findDates(s) {
+    var out = [], m;
+    DATE_RE.lastIndex = 0;
+    while ((m = DATE_RE.exec(s))) {
+      var iso = m[1] ? normYMD(m[1], m[2], m[3]) : normYMD(m[4], m[5], m[6]);
+      if (iso) out.push({ iso: iso, at: m.index });
+    }
+    /* 사진 인식에서 점 하나가 빠진 '2026.1222' 같은 형태 */
+    var reHalf = /([0-9]{4})\s*[.\-\/·]\s*([0-9]{2})([0-9]{2})(?![0-9])/g;
+    while ((m = reHalf.exec(s))) {
+      var isoH = normYMD(m[1], m[2], m[3]);
+      if (isoH) out.push({ iso: isoH, at: m.index });
+    }
+    var re8 = /(^|[^0-9])([0-9]{8})(?![0-9])/g;
+    while ((m = re8.exec(s))) {
+      var d8 = m[2];
+      var iso8 = normYMD(d8.slice(0, 4), d8.slice(4, 6), d8.slice(6, 8));
+      if (iso8) out.push({ iso: iso8, at: m.index + m[1].length });
+    }
+    /* 같은 날짜가 중복으로 잡히면 하나만 */
+    var seen = {}, uniq = [];
+    for (var i = 0; i < out.length; i++) {
+      var k = out[i].iso + '@' + out[i].at;
+      if (seen[k]) continue;
+      seen[k] = 1;
+      uniq.push(out[i]);
+    }
+    return uniq;
+  }
+
+  function extractExpiry(text) {
+    var s = String(text || '');
+    var cands = findDates(s);
+    if (!cands.length) return null;
+    var kws = [], km;
+    KW_RE.lastIndex = 0;
+    while ((km = KW_RE.exec(s))) kws.push(km.index + km[0].length);
+    var best = null, bestD = Infinity;
+    for (var i = 0; i < cands.length; i++) {
+      for (var j = 0; j < kws.length; j++) {
+        var d = cands[i].at - kws[j];
+        if (d >= 0 && d < bestD) { bestD = d; best = cands[i]; }
+      }
+    }
+    if (best) return best.iso;
+    cands.sort(function (a, b) { return a.iso < b.iso ? 1 : (a.iso > b.iso ? -1 : 0); });
+    return cands[0].iso;
+  }
+
+  function extractCouponCode(text) {
+    var s = String(text || '');
+    /* 날짜·금액·전화번호 모양은 후보에서 제외하기 위해 지운다 */
+    s = s.replace(/(\d{4})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일/g, ' ');
+    s = s.replace(/\d{2,4}\s*[.\-\/]\s*\d{1,2}\s*[.\-\/]\s*\d{1,2}/g, ' ');
+    s = s.replace(/\d{1,3}(,\d{3})+\s*원?/g, ' ');
+    s = s.replace(/\d+\s*원/g, ' ');
+
+    var m, best = null;
+    var re4 = /(\d{4})[\s\-](\d{4})[\s\-](\d{4})(?:[\s\-](\d{2,4}))?/g;
+    while ((m = re4.exec(s))) {
+      var d = m[1] + m[2] + m[3] + (m[4] || '');
+      if (d.length >= 12 && d.length <= 16) { best = d; break; }
+    }
+    if (best) return best;
+    var runs = s.match(/[0-9]+/g) || [];
+    for (var i = 0; i < runs.length; i++) {
+      if (runs[i].length >= 12 && runs[i].length <= 16) return runs[i];
+    }
+    return null;
+  }
+
+  function extractBrand(text) {
+    var s = String(text || '');
+    var low = s.toLowerCase();
+    for (var i = 0; i < BRANDS.length; i++) {
+      var b = BRANDS[i];
+      if (low.indexOf(b.toLowerCase()) >= 0) return b;
+    }
+    return '';
+  }
+
+  function guessName(text, brand) {
+    var lines = String(text || '').split(/\r?\n/).map(trim).filter(Boolean);
+    for (var i = 0; i < lines.length; i++) {
+      var m = lines[i].match(/(?:상품명|상품|메뉴|품목)\s*[:：]\s*(.+)$/);
+      if (m) {
+        var v = trim(m[1]);
+        if (v) return v;
+      }
+    }
+    var skip = /(쿠폰\s*번호|쿠폰번호|바코드|유효\s*기간|유효기간|만료|사용\s*기한|교환\s*처|교환처|사용\s*처|주문\s*번호|주문번호|결제|금액|기프티콘|선물하기|선물이|도착)/;
+    for (var j = 0; j < lines.length; j++) {
+      var l = lines[j].replace(/^[\[\(【][^\]\)】]*[\]\)】]\s*/, '').trim();
+      if (!l) continue;
+      if (skip.test(l)) continue;
+      if (/^[0-9\s\-]+$/.test(l)) continue;
+      if (brand && l.replace(/\s/g, '') === brand) continue;
+      if (brand && l.indexOf(brand) === 0) {
+        var rest = trim(l.slice(brand.length));
+        if (!rest) continue;
+        l = rest;
+      }
+      if (l.length > 40) continue;
+      return l;
+    }
+    return '';
+  }
+
+  function parseCouponText(text) {
+    var s = String(text || '').replace(/\u00a0/g, ' ');
+    var brand = extractBrand(s);
+    return {
+      brand: brand,
+      name: guessName(s, brand),
+      code: extractCouponCode(s),
+      expiry: extractExpiry(s)
+    };
+  }
+
+  /* ────────────────────── 3. 쿠폰 상태·정렬·검색 ────────────────────── */
+  function statusOf(c, today) {
+    if (c.used) return 'used';
+    var d = daysLeft(c.expiry, today);
+    if (d === null) return 'nodate';
+    if (d < 0) return 'expired';
+    if (d === 0) return 'today';
+    if (d <= 3) return 'soon';
+    return 'active';
+  }
+  function badgeOf(c, today) {
+    if (c.used) return { cls: 'done', text: '사용 완료' };
+    var d = daysLeft(c.expiry, today);
+    if (d === null) return { cls: '', text: '만료일 없음' };
+    if (d < 0) return { cls: 'expired', text: '만료 ' + (-d) + '일 지남' };
+    if (d === 0) return { cls: 'today', text: '오늘 만료' };
+    return { cls: d <= 3 ? 'soon' : '', text: 'D-' + d };
+  }
+  function groupOf(c, today) {
+    if (c.used) return 2;
+    var d = daysLeft(c.expiry, today);
+    if (d === null || d < 0) return 1;
+    return 0;
+  }
+  function sortCoupons(list, today) {
+    var arr = (list || []).slice();
+    arr.sort(function (a, b) {
+      var ga = groupOf(a, today), gb = groupOf(b, today);
+      if (ga !== gb) return ga - gb;
+      var da = daysLeft(a.expiry, today), db = daysLeft(b.expiry, today);
+      if (ga === 0) {
+        if (da !== db) return da - db;
+      } else if (ga === 1) {
+        var xa = da === null ? -99999 : da, xb = db === null ? -99999 : db;
+        if (xa !== xb) return xb - xa;
+      } else {
+        var ua = a.usedAt || '', ub = b.usedAt || '';
+        if (ua !== ub) return ua < ub ? 1 : -1;
+      }
+      var na = (a.name || a.brand || ''), nb = (b.name || b.brand || '');
+      return na.localeCompare(nb);
+    });
+    return arr;
+  }
+  function matchCoupon(c, q) {
+    var s = trim(q).toLowerCase();
+    if (!s) return true;
+    var hay = [c.brand, c.name, c.notes, fmtCode(c.code), c.code].join(' ').toLowerCase();
+    if (hay.indexOf(s) >= 0) return true;
+    var dq = digits(s);
+    if (dq.length >= 2 && digits(c.code).indexOf(dq) >= 0) return true;
+    return false;
+  }
+
+  function applySpend(c, amount, note, at) {
+    var won = Math.round(Number(amount) || 0);
+    if (!c.isValue) return { ok: false, error: 'notvalue' };
+    if (!(won > 0)) return { ok: false, error: 'amount' };
+    var bal = Math.round(Number(c.balance) || 0);
+    if (won > bal) return { ok: false, error: 'over', balance: bal };
+    c.history = c.history || [];
+    var after = bal - won;
+    c.balance = after;
+    c.history.push({ at: at || nowISO(), amount: won, balanceAfter: after, note: trim(note || '') });
+    c.updatedAt = at || nowISO();
+    var autoDone = false;
+    if (after <= 0) {
+      c.used = true;
+      c.usedAt = c.updatedAt;
+      c.usedReason = 'balance-zero';
+      autoDone = true;
+    }
+    return { ok: true, balance: after, autoDone: autoDone };
+  }
+
+  /* ─────────────────── 4. 이중 저장소(IndexedDB+localStorage) ─────────────────── */
+  function couponForLS(c) {
+    var o = {};
+    for (var k in c) {
+      if (!Object.prototype.hasOwnProperty.call(c, k)) continue;
+      if (k === 'image' || k === 'thumb') continue;
+      o[k] = c[k];
+    }
+    return o;
+  }
+  /* localStorage 한도에 맞춰 썸네일을 줄여가며 사본을 만든다(메타데이터는 항상 유지). */
+  function toLSPayload(coupons, budget, savedAt) {
+    var cap = budget || LS_BUDGET;
+    var list = (coupons || []).map(function (c) {
+      var o = couponForLS(c);
+      if (c.thumb) o.thumb = c.thumb;
+      return o;
+    });
+    var payload = { v: 1, savedAt: savedAt || Date.now(), coupons: list, settings: null };
+    var json = JSON.stringify(payload);
+    if (utf8len(json) <= cap) {
+      var kept = list.filter(function (o) { return !!o.thumb; }).length;
+      return { json: json, mode: kept ? 'full' : 'meta', dropped: 0, bytes: utf8len(json), ok: true };
+    }
+    var order = [];
+    for (var i = 0; i < list.length; i++) if (list[i].thumb) order.push({ i: i, size: list[i].thumb.length });
+    order.sort(function (a, b) { return b.size - a.size; });
+    var dropped = 0;
+    for (var k = 0; k < order.length; k++) {
+      delete list[order[k].i].thumb;
+      dropped++;
+      json = JSON.stringify(payload);
+      if (utf8len(json) <= cap) {
+        return { json: json, mode: 'partial', dropped: dropped, bytes: utf8len(json), ok: true };
+      }
+    }
+    json = JSON.stringify(payload);
+    return { json: json, mode: 'meta', dropped: dropped, bytes: utf8len(json), ok: utf8len(json) <= cap };
+  }
+
+  /* 같은 id는 updatedAt이 최신인 쪽을 쓰되, 사진(image/thumb)은 있는 쪽을 살린다. */
+  function mergeCoupons(a, b) {
+    var map = {}, order = [];
+    function add(list) {
+      if (!list) return;
+      for (var i = 0; i < list.length; i++) {
+        var c = list[i];
+        if (!c || !c.id) continue;
+        var cur = map[c.id];
+        if (!cur) { map[c.id] = c; order.push(c.id); continue; }
+        var newer = (c.updatedAt || '') > (cur.updatedAt || '') ? c : cur;
+        var older = newer === c ? cur : c;
+        var m = {};
+        for (var k in older) if (Object.prototype.hasOwnProperty.call(older, k)) m[k] = older[k];
+        for (var k2 in newer) {
+          if (!Object.prototype.hasOwnProperty.call(newer, k2)) continue;
+          if (newer[k2] === undefined || newer[k2] === null) continue;
+          m[k2] = newer[k2];
+        }
+        if (!m.image && older.image) m.image = older.image;
+        if (!m.thumb && older.thumb) m.thumb = older.thumb;
+        map[c.id] = m;
+      }
+    }
+    add(a); add(b);
+    var out = [];
+    for (var j = 0; j < order.length; j++) out.push(map[order[j]]);
+    return out;
+  }
+
+  function countOf(state) {
+    return state && state.coupons ? state.coupons.length : 0;
+  }
+  /* 앱 부팅 시 어느 저장소에서 무엇을 되살릴지 결정 */
+  function pickBootState(idb, ls) {
+    var ic = countOf(idb), lc = countOf(ls);
+    if (!ic && !lc) return { coupons: [], action: 'empty', note: '', settings: (idb && idb.settings) || (ls && ls.settings) || null };
+    if (!ic && lc) {
+      return { coupons: ls.coupons, action: 'ls-to-idb', note: 'localStorage 사본에서 ' + lc + '개를 되살렸어요 (IndexedDB가 비어 있었음)', settings: ls.settings || null };
+    }
+    if (ic && !lc) {
+      return { coupons: idb.coupons, action: 'idb-to-ls', note: 'IndexedDB 사본에서 ' + ic + '개를 되살렸어요 (localStorage가 비어 있었음)', settings: idb.settings || null };
+    }
+    var merged = mergeCoupons(idb.coupons, ls.coupons);
+    var action = 'synced';
+    var note = '';
+    if (merged.length > Math.max(ic, lc)) {
+      action = 'merged';
+      note = '두 저장소를 합쳐 ' + merged.length + '개로 맞췄어요';
+    } else if ((idb.savedAt || 0) > (ls.savedAt || 0)) {
+      action = 'idb-newer';
+      note = 'IndexedDB가 더 최신이라 그 사본을 기준으로 맞췄어요';
+    } else if ((ls.savedAt || 0) > (idb.savedAt || 0)) {
+      action = 'ls-newer';
+      note = 'localStorage가 더 최신이라 그 사본을 기준으로 맞췄어요';
+    }
+    return { coupons: merged, action: action, note: note, settings: idb.settings || ls.settings || null };
+  }
+
+  /* ────────────────────── 5. Code128 바코드 ────────────────────── */
+  var C128 = [
+    '212222', '222122', '222221', '121223', '121322', '131222', '122213', '122312', '132212', '221213',
+    '221312', '231212', '112232', '122132', '122231', '113222', '123122', '123221', '223211', '221132',
+    '221231', '213212', '223112', '312131', '311222', '321122', '321221', '312212', '322112', '322211',
+    '212123', '212321', '232121', '111323', '131123', '131321', '112313', '132113', '132311', '211313',
+    '231113', '231311', '112133', '112331', '132131', '113123', '113321', '133121', '313121', '211331',
+    '231131', '213113', '213311', '213131', '311123', '311321', '331121', '312113', '312311', '332111',
+    '314111', '221411', '431111', '111224', '111422', '121124', '121421', '141122', '141221', '112214',
+    '112412', '122114', '122411', '142112', '142211', '241211', '221114', '413111', '241112', '134111',
+    '111242', '121142', '121241', '114212', '124112', '124211', '411212', '421112', '421211', '212141',
+    '214121', '412121', '111143', '111341', '131141', '114113', '114311', '411113', '411311', '113141',
+    '114131', '311141', '411131', '211412', '211214', '211232', '2331112'
+  ];
+
+  /* 문자열 → 모듈 폭 문자열(예: '212222...'). 각 숫자가 막대/공백 폭(모듈). */
+  function code128(text) {
+    var s = String(text == null ? '' : text);
+    if (!s) throw new Error('번호가 비어 있어요');
+    var values = [104], sum = 104;
+    for (var i = 0; i < s.length; i++) {
+      var c = s.charCodeAt(i);
+      if (c < 32 || c > 126) throw new Error('바코드로 만들 수 없는 글자가 있어요');
+      var v = c - 32;
+      values.push(v);
+      sum += v * (i + 1);
+    }
+    values.push(sum % 103);
+    values.push(106);
+    var out = '';
+    for (var k = 0; k < values.length; k++) out += C128[values[k]];
+    return out;
+  }
+
+  /* ────────────────────── 6. QR 코드(내장 인코더) ────────────────────── */
+  function qrMatrix(text, opts) {
+    var level = (opts && opts.level) || 'M';
+    var CAP = [14, 26, 42, 62, 84, 106, 122, 152, 180, 213];
+    var TOTAL = [26, 44, 70, 100, 134, 172, 196, 242, 292, 346];
+    var ECPB = [10, 16, 26, 18, 24, 16, 18, 22, 22, 26];
+    var NUMB = [1, 1, 1, 2, 2, 4, 4, 4, 5, 5];
+    var ALIGN = [[], [6, 18], [6, 22], [6, 26], [6, 30], [6, 34], [6, 22, 38], [6, 24, 42], [6, 26, 46], [6, 28, 50]];
+    var EC_BITS = { L: 1, M: 0, Q: 3, H: 2 };
+    if (!CAP.length) return null;
+
+    var EXP = new Array(512), LOG = new Array(256);
+    (function () {
+      var x = 1;
+      for (var i = 0; i < 255; i++) { EXP[i] = x; LOG[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11d; }
+      for (var j = 255; j < 512; j++) EXP[j] = EXP[j - 255];
+    })();
+    function gmul(a, b) { if (a === 0 || b === 0) return 0; return EXP[LOG[a] + LOG[b]]; }
+    function genPoly(n) {
+      var p = [1];
+      for (var i = 0; i < n; i++) {
+        var np = new Array(p.length + 1);
+        for (var z = 0; z < np.length; z++) np[z] = 0;
+        for (var j = 0; j < p.length; j++) { np[j] ^= p[j]; np[j + 1] ^= gmul(p[j], EXP[i]); }
+        p = np;
+      }
+      return p;
+    }
+    function rsEncode(data, ecLen) {
+      var gen = genPoly(ecLen), buf = data.slice(), i, j;
+      for (i = 0; i < ecLen; i++) buf.push(0);
+      for (i = 0; i < data.length; i++) {
+        var coef = buf[i];
+        if (coef !== 0) for (j = 0; j < gen.length; j++) buf[i + j] ^= gmul(gen[j], coef);
+      }
+      return buf.slice(data.length);
+    }
+    function utf8Bytes(str) {
+      var out = [], s = String(str);
+      for (var i = 0; i < s.length; i++) {
+        var c = s.charCodeAt(i);
+        if (c < 0x80) out.push(c);
+        else if (c < 0x800) out.push(0xc0 | (c >> 6), 0x80 | (c & 63));
+        else if (c >= 0xd800 && c <= 0xdbff && i + 1 < s.length) {
+          var c2 = s.charCodeAt(++i);
+          var cp = 0x10000 + ((c - 0xd800) << 10) + (c2 - 0xdc00);
+          out.push(0xf0 | (cp >> 18), 0x80 | ((cp >> 12) & 63), 0x80 | ((cp >> 6) & 63), 0x80 | (cp & 63));
+        } else out.push(0xe0 | (c >> 12), 0x80 | ((c >> 6) & 63), 0x80 | (c & 63));
+      }
+      return out;
+    }
+
+    var bytes = utf8Bytes(text);
+    var ver = 0;
+    for (var vi = 0; vi < CAP.length; vi++) if (bytes.length <= CAP[vi]) { ver = vi + 1; break; }
+    if (!ver) throw new Error('QR로 담기엔 내용이 너무 길어요');
+    var nb = NUMB[ver - 1], ecLen = ECPB[ver - 1];
+    var dataCount = TOTAL[ver - 1] - ecLen * nb;
+
+    /* 데이터 코드워드 */
+    var bits = [];
+    function put(val, len) { for (var i = len - 1; i >= 0; i--) bits.push((val >> i) & 1); }
+    put(4, 4);
+    put(bytes.length, ver < 10 ? 8 : 16);
+    for (var bi = 0; bi < bytes.length; bi++) put(bytes[bi], 8);
+    var capBits = dataCount * 8;
+    var termLen = Math.min(4, Math.max(0, capBits - bits.length));
+    for (var t = 0; t < termLen; t++) bits.push(0);
+    while (bits.length % 8 !== 0) bits.push(0);
+    var cw = [];
+    for (var cwi = 0; cwi < bits.length; cwi += 8) {
+      var v8 = 0;
+      for (var k8 = 0; k8 < 8; k8++) v8 = (v8 << 1) | bits[cwi + k8];
+      cw.push(v8);
+    }
+    var padBytes = [0xEC, 0x11], padIdx = 0;
+    while (cw.length < dataCount) { cw.push(padBytes[padIdx]); padIdx = 1 - padIdx; }
+
+    /* 블록 분할 + RS + 인터리브 */
+    var baseLen = Math.floor(dataCount / nb), extra = dataCount % nb;
+    var blocks = [], ecBlocks = [], pos = 0;
+    for (var b1 = 0; b1 < nb; b1++) {
+      var len1 = baseLen + (b1 >= nb - extra ? 1 : 0);
+      var blk = cw.slice(pos, pos + len1); pos += len1;
+      blocks.push(blk);
+      ecBlocks.push(rsEncode(blk, ecLen));
+    }
+    var stream = [], maxLen = baseLen + (extra ? 1 : 0), i2, b2;
+    for (i2 = 0; i2 < maxLen; i2++) for (b2 = 0; b2 < nb; b2++) if (i2 < blocks[b2].length) stream.push(blocks[b2][i2]);
+    for (i2 = 0; i2 < ecLen; i2++) for (b2 = 0; b2 < nb; b2++) stream.push(ecBlocks[b2][i2]);
+
+    /* 매트릭스 */
+    var size = 17 + ver * 4;
+    var mtx = [], fn = [], r, c;
+    for (r = 0; r < size; r++) {
+      mtx.push(new Array(size)); fn.push(new Array(size));
+      for (c = 0; c < size; c++) { mtx[r][c] = 0; fn[r][c] = false; }
+    }
+    function setFn(x, y, v) {
+      if (x < 0 || y < 0 || x >= size || y >= size) return;
+      mtx[y][x] = v ? 1 : 0; fn[y][x] = true;
+    }
+    function finder(x0, y0) {
+      for (var dy = -1; dy <= 7; dy++) for (var dx = -1; dx <= 7; dx++) {
+        var x = x0 + dx, y = y0 + dy;
+        if (x < 0 || y < 0 || x >= size || y >= size) continue;
+        var inside = dx >= 0 && dx <= 6 && dy >= 0 && dy <= 6;
+        var on = inside && (dx === 0 || dx === 6 || dy === 0 || dy === 6 || (dx >= 2 && dx <= 4 && dy >= 2 && dy <= 4));
+        setFn(x, y, on);
+      }
+    }
+    finder(0, 0); finder(size - 7, 0); finder(0, size - 7);
+    var i3;
+    for (i3 = 8; i3 < size - 8; i3++) { setFn(i3, 6, i3 % 2 === 0); setFn(6, i3, i3 % 2 === 0); }
+    var al = ALIGN[ver - 1];
+    for (var ay = 0; ay < al.length; ay++) for (var ax = 0; ax < al.length; ax++) {
+      var cx = al[ax], cy = al[ay];
+      if ((cx === 6 && cy === 6) || (cx === 6 && cy === size - 7) || (cx === size - 7 && cy === 6)) continue;
+      for (var ddy = -2; ddy <= 2; ddy++) for (var ddx = -2; ddx <= 2; ddx++) {
+        setFn(cx + ddx, cy + ddy, Math.max(Math.abs(ddx), Math.abs(ddy)) !== 1);
+      }
+    }
+    /* 포맷 정보 자리 예약 */
+    for (i3 = 0; i3 <= 8; i3++) {
+      if (i3 !== 6) { setFn(8, i3, false); setFn(i3, 8, false); }
+    }
+    for (i3 = 0; i3 < 8; i3++) { setFn(8, size - 1 - i3, false); setFn(size - 1 - i3, 8, false); }
+    setFn(8, size - 8, true);
+    if (ver >= 7) {
+      for (var vy = 0; vy < 6; vy++) for (var vx = 0; vx < 3; vx++) {
+        setFn(size - 11 + vx, vy, false);
+        setFn(vy, size - 11 + vx, false);
+      }
+    }
+
+    /* 데이터 배치 */
+    var bitIdx = 0, totalBits = stream.length * 8, inc = -1, row = size - 1;
+    for (var col = size - 1; col > 0; col -= 2) {
+      if (col === 6) col--;
+      for (;;) {
+        for (var cc = 0; cc < 2; cc++) {
+          var xx = col - cc;
+          if (!fn[row][xx]) {
+            var bitV = 0;
+            if (bitIdx < totalBits) { bitV = (stream[bitIdx >> 3] >> (7 - (bitIdx & 7))) & 1; bitIdx++; }
+            mtx[row][xx] = bitV;
+          }
+        }
+        row += inc;
+        if (row < 0 || row >= size) { row -= inc; inc = -inc; break; }
+      }
+    }
+
+    function maskBit(mask, i, j) {
+      switch (mask) {
+        case 0: return (i + j) % 2 === 0;
+        case 1: return i % 2 === 0;
+        case 2: return j % 3 === 0;
+        case 3: return (i + j) % 3 === 0;
+        case 4: return (Math.floor(i / 2) + Math.floor(j / 3)) % 2 === 0;
+        case 5: return ((i * j) % 2) + ((i * j) % 3) === 0;
+        case 6: return (((i * j) % 2) + ((i * j) % 3)) % 2 === 0;
+        default: return (((i * j) % 3) + ((i + j) % 2)) % 2 === 0;
+      }
+    }
+    function bchDigit(v) { var d = 0; while (v !== 0) { d++; v = v >>> 1; } return d; }
+    function formatBits(mask) {
+      var data = (EC_BITS[level] << 3) | mask, d = data << 10, G = 0x537;
+      while (bchDigit(d) - bchDigit(G) >= 0) d ^= (G << (bchDigit(d) - bchDigit(G)));
+      return ((data << 10) | d) ^ 0x5412;
+    }
+    function putFormat(out, mask) {
+      var bitsF = formatBits(mask), i, bit;
+      for (i = 0; i < 15; i++) {
+        bit = (bitsF >> i) & 1;
+        if (i < 6) out[i][8] = bit;
+        else if (i < 8) out[i + 1][8] = bit;
+        else out[size - 15 + i][8] = bit;
+        if (i < 8) out[8][size - 1 - i] = bit;
+        else if (i === 8) out[8][7] = bit;
+        else out[8][15 - i - 1] = bit;
+      }
+      out[size - 8][8] = 1;
+    }
+    function putVersion(out) {
+      var dv = ver << 12, G = 0x1f25;
+      while (bchDigit(dv) - bchDigit(G) >= 0) dv ^= (G << (bchDigit(dv) - bchDigit(G)));
+      var bitsV = (ver << 12) | dv;
+      for (var i = 0; i < 18; i++) {
+        var bit = (bitsV >> i) & 1;
+        out[Math.floor(i / 3)][i % 3 + size - 11] = bit;
+        out[i % 3 + size - 11][Math.floor(i / 3)] = bit;
+      }
+    }
+    var PAT_A = [1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0];
+    var PAT_B = [0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1];
+    function penalty(mm) {
+      var score = 0, x, y, run, dark, i, k;
+      for (y = 0; y < size; y++) {
+        run = 1; dark = mm[y][0];
+        for (x = 1; x < size; x++) {
+          if (mm[y][x] === dark) { run++; if (run === 5) score += 3; else if (run > 5) score += 1; }
+          else { dark = mm[y][x]; run = 1; }
+        }
+      }
+      for (x = 0; x < size; x++) {
+        run = 1; dark = mm[0][x];
+        for (y = 1; y < size; y++) {
+          if (mm[y][x] === dark) { run++; if (run === 5) score += 3; else if (run > 5) score += 1; }
+          else { dark = mm[y][x]; run = 1; }
+        }
+      }
+      for (y = 0; y < size - 1; y++) for (x = 0; x < size - 1; x++) {
+        var v = mm[y][x];
+        if (v === mm[y][x + 1] && v === mm[y + 1][x] && v === mm[y + 1][x + 1]) score += 3;
+      }
+      function scanLine(get) {
+        for (i = 0; i + 10 < size; i++) {
+          var okA = true, okB = true;
+          for (k = 0; k < 11; k++) {
+            var b = get(i + k);
+            if (b !== PAT_A[k]) okA = false;
+            if (b !== PAT_B[k]) okB = false;
+          }
+          if (okA) score += 40;
+          if (okB) score += 40;
+        }
+      }
+      for (y = 0; y < size; y++) (function (yy) { scanLine(function (idx) { return mm[yy][idx]; }); })(y);
+      for (x = 0; x < size; x++) (function (xx2) { scanLine(function (idx) { return mm[idx][xx2]; }); })(x);
+      var darkN = 0;
+      for (y = 0; y < size; y++) for (x = 0; x < size; x++) darkN += mm[y][x];
+      var pct = darkN * 100 / (size * size);
+      score += Math.floor(Math.abs(pct - 50) / 5) * 10;
+      return score;
+    }
+
+    var best = null, bestScore = Infinity, bestMask = 0;
+    for (var mask = 0; mask < 8; mask++) {
+      var cand = [], y2, x2;
+      for (y2 = 0; y2 < size; y2++) {
+        cand.push(new Array(size));
+        for (x2 = 0; x2 < size; x2++) {
+          var vv = mtx[y2][x2];
+          if (!fn[y2][x2] && maskBit(mask, y2, x2)) vv ^= 1;
+          cand[y2][x2] = vv;
+        }
+      }
+      putFormat(cand, mask);
+      if (ver >= 7) putVersion(cand);
+      var sc = penalty(cand);
+      if (sc < bestScore) { bestScore = sc; best = cand; bestMask = mask; }
+    }
+    return { size: size, version: ver, mask: bestMask, level: level, modules: best };
+  }
+
+  /* ────────────────────── 7. 만료 알림(.ics, RFC 5545) ────────────────────── */
+  function icsEsc(s) {
+    return String(s == null ? '' : s)
+      .replace(/\\/g, '\\\\')
+      .replace(/;/g, '\\;')
+      .replace(/,/g, '\\,')
+      .replace(/\r?\n/g, '\\n');
+  }
+  function icsCharBytes(ch) {
+    var c = ch.charCodeAt(0);
+    if (c < 0x80) return 1;
+    if (c < 0x800) return 2;
+    if (c >= 0xd800 && c <= 0xdbff) return 4;
+    return 3;
+  }
+  function foldLine(line) {
+    var out = [], cur = '', bytes = 0;
+    for (var i = 0; i < line.length; i++) {
+      var ch = line.charAt(i), b = icsCharBytes(ch);
+      if (bytes + b > 75) {
+        var carry = '';
+        if (cur.length > 1 && cur.charAt(cur.length - 1) === '\\') {
+          cur = cur.slice(0, cur.length - 1);
+          carry = '\\';
+        }
+        out.push(cur);
+        cur = ' ' + carry;
+        bytes = 1 + carry.length;
+      }
+      cur += ch;
+      bytes += b;
+    }
+    out.push(cur);
+    return out.join('\r\n');
+  }
+  function utcStamp(d) {
+    return d.getUTCFullYear() + pad2(d.getUTCMonth() + 1) + pad2(d.getUTCDate()) +
+      'T' + pad2(d.getUTCHours()) + pad2(d.getUTCMinutes()) + pad2(d.getUTCSeconds()) + 'Z';
+  }
+  function icsDate(iso) { return String(iso || '').replace(/-/g, ''); }
+  /* 아시아/서울은 UTC+9 고정 → 알림 날 09:00 KST = 같은 날 00:00Z */
+  function alarmTriggerUTC(iso) { return icsDate(iso) + 'T000000Z'; }
+
+  function buildICS(coupons, daysList, opts) {
+    opts = opts || {};
+    var now = opts.now || new Date();
+    var stamp = utcStamp(now);
+    var calName = opts.calName || '기프티콘 만료 알림';
+    var days = (daysList && daysList.length ? daysList : [0]).map(Number)
+      .filter(function (n) { return isFinite(n) && n >= 0 && n <= 365; });
+    if (!days.length) days = [0];
+    days.sort(function (a, b) { return b - a; });
+    var uniq = [];
+    for (var i = 0; i < days.length; i++) if (uniq.indexOf(days[i]) < 0) uniq.push(days[i]);
+    days = uniq;
+
+    var L = [];
+    L.push('BEGIN:VCALENDAR');
+    L.push('VERSION:2.0');
+    L.push('PRODID:-//Gifticon Wallet//KO 1.0//EN');
+    L.push('CALSCALE:GREGORIAN');
+    L.push('METHOD:PUBLISH');
+    L.push('X-WR-CALNAME:' + icsEsc(calName));
+    L.push('X-WR-TIMEZONE:Asia/Seoul');
+
+    var events = 0;
+    for (var ci = 0; ci < (coupons || []).length; ci++) {
+      var c = coupons[ci];
+      if (!c || !c.expiry || !dateFromISO(c.expiry)) continue;
+      for (var di = 0; di < days.length; di++) {
+        var day = days[di];
+        var when = addDaysISO(c.expiry, -day);
+        if (!when) continue;
+        var label = day === 0 ? '오늘 만료' : 'D-' + day;
+        var title = label + ' · ' + trim((c.brand ? c.brand + ' ' : '') + (c.name || '기프티콘'));
+        var descParts = [];
+        descParts.push((c.brand ? c.brand + ' ' : '') + (c.name || '기프티콘'));
+        descParts.push('만료일: ' + fmtDate(c.expiry));
+        if (c.code) descParts.push('쿠폰번호: ' + fmtCode(c.code));
+        if (c.isValue) descParts.push('잔액: ' + fmtWon(c.balance) + ' / ' + fmtWon(c.initial));
+        if (c.notes) descParts.push('메모: ' + c.notes);
+        descParts.push('기프티콘 지갑에서 만든 알림');
+        var desc = descParts.join('\n');
+        L.push('BEGIN:VEVENT');
+        L.push('UID:gm-' + String(c.id || 'x') + '-d' + day + '@gifticon-wallet.local');
+        L.push('DTSTAMP:' + stamp);
+        L.push('DTSTART;VALUE=DATE:' + icsDate(when));
+        L.push('DTEND;VALUE=DATE:' + icsDate(addDaysISO(when, 1)));
+        L.push('SUMMARY:' + icsEsc(title));
+        L.push('DESCRIPTION:' + icsEsc(desc));
+        L.push('TRANSP:TRANSPARENT');
+        L.push('CATEGORIES:' + icsEsc('기프티콘'));
+        L.push('BEGIN:VALARM');
+        L.push('ACTION:DISPLAY');
+        L.push('DESCRIPTION:' + icsEsc(title));
+        L.push('TRIGGER;VALUE=DATE-TIME:' + alarmTriggerUTC(when));
+        L.push('END:VALARM');
+        L.push('END:VEVENT');
+        events++;
+      }
+    }
+    L.push('END:VCALENDAR');
+
+    var text = '';
+    for (var li = 0; li < L.length; li++) text += foldLine(L[li]) + '\r\n';
+    return { text: text, events: events };
+  }
+
+  /* ────────────────────── 8. 노출(검증용) ────────────────────── */
+  var GM = {
+    VERSION: VERSION,
+    pad2: pad2, isoOf: isoOf, todayISO: todayISO, dateFromISO: dateFromISO,
+    daysLeft: daysLeft, addDaysISO: addDaysISO, normYMD: normYMD, fmtDate: fmtDate,
+    fmtWon: fmtWon, fmtCode: fmtCode, digits: digits, escHTML: escHTML, utf8len: utf8len, uid: uid,
+    parseCouponText: parseCouponText, extractCouponCode: extractCouponCode, extractExpiry: extractExpiry,
+    extractBrand: extractBrand, guessName: guessName,
+    statusOf: statusOf, badgeOf: badgeOf, groupOf: groupOf, sortCoupons: sortCoupons, matchCoupon: matchCoupon,
+    applySpend: applySpend,
+    toLSPayload: toLSPayload, mergeCoupons: mergeCoupons, pickBootState: pickBootState, couponForLS: couponForLS,
+    code128: code128, C128: C128, qrMatrix: qrMatrix,
+    buildICS: buildICS, foldLine: foldLine, icsEsc: icsEsc, alarmTriggerUTC: alarmTriggerUTC,
+    LS_KEY: LS_KEY, IDB_NAME: IDB_NAME, IDB_STORE: IDB_STORE, LS_BUDGET: LS_BUDGET
+  };
+  if (typeof window !== 'undefined') window.GM = GM;
+  if (typeof module !== 'undefined' && module.exports) module.exports = GM;
+  /* ────────────────────── 9. 앱(DOM) ────────────────────── */
+  if (typeof document === 'undefined') return;
+
+  var $ = function (id) { return document.getElementById(id); };
+  var state = { coupons: [], settings: { alarmDays: [0, 3] }, savedAt: 0 };
+  var ui = {
+    tab: 'avail', q: '', editingId: null, balanceId: null, pv: 'barcode',
+    icsSel: {}, customDays: [], confirmCb: null, importData: null,
+    rawImage: '', curImage: '', curThumb: '', bootNote: '', bootAction: ''
+  };
+  var store = { idbOk: false, lsOk: false, lsMode: 'meta', dropped: 0, savedAt: 0 };
+
+  function findCoupon(id) {
+    for (var i = 0; i < state.coupons.length; i++) if (state.coupons[i].id === id) return state.coupons[i];
+    return null;
+  }
+  function decorate(c) {
+    var o = {};
+    for (var k in c) if (Object.prototype.hasOwnProperty.call(c, k)) o[k] = c[k];
+    if (!o.id) o.id = uid();
+    o.brand = o.brand || '';
+    o.name = o.name || '';
+    o.code = o.code || '';
+    o.expiry = o.expiry || '';
+    o.notes = o.notes || '';
+    o.isValue = !!o.isValue;
+    if (o.isValue) {
+      o.initial = Math.round(Number(o.initial) || 0);
+      var b = Math.round(Number(o.balance));
+      o.balance = isNaN(b) ? o.initial : b;
+      if (!o.initial) o.initial = o.balance;
+    } else { o.initial = 0; o.balance = 0; }
+    o.history = o.history || [];
+    o.used = !!o.used;
+    o.createdAt = o.createdAt || nowISO();
+    o.updatedAt = o.updatedAt || o.createdAt;
+    return o;
+  }
+
+  /* ── 저장소 ── */
+  var DB = { db: null };
+  function idbOpen() {
+    return new Promise(function (resolve) {
+      var avail = false;
+      try { avail = !!window.indexedDB; } catch (e) { avail = false; }
+      if (!avail) { resolve(false); return; }
+      var req;
+      try { req = window.indexedDB.open(IDB_NAME, 1); } catch (e) { resolve(false); return; }
+      req.onupgradeneeded = function () {
+        var db = req.result;
+        if (!db.objectStoreNames.contains(IDB_STORE)) db.createObjectStore(IDB_STORE);
+      };
+      req.onsuccess = function () { DB.db = req.result; resolve(true); };
+      req.onerror = function () { resolve(false); };
+      req.onblocked = function () { resolve(false); };
+      setTimeout(function () { if (!DB.db) resolve(false); }, 4000);
+    });
+  }
+  function idbGet() {
+    return new Promise(function (resolve) {
+      if (!DB.db) { resolve(null); return; }
+      try {
+        var tx = DB.db.transaction(IDB_STORE, 'readonly');
+        var rq = tx.objectStore(IDB_STORE).get('main');
+        rq.onsuccess = function () { resolve(rq.result || null); };
+        rq.onerror = function () { resolve(null); };
+      } catch (e) { resolve(null); }
+    });
+  }
+  function idbPut(payload) {
+    return new Promise(function (resolve) {
+      if (!DB.db) { resolve(false); return; }
+      try {
+        var tx = DB.db.transaction(IDB_STORE, 'readwrite');
+        tx.objectStore(IDB_STORE).put(payload, 'main');
+        tx.oncomplete = function () { resolve(true); };
+        tx.onerror = function () { resolve(false); };
+        tx.onabort = function () { resolve(false); };
+      } catch (e) { resolve(false); }
+    });
+  }
+
+  var saveTimer = null;
+  function persist() {
+    if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; }
+    return persistNow();
+  }
+  function persistNow() {
+    state.savedAt = Date.now();
+    var full = { v: 1, savedAt: state.savedAt, coupons: state.coupons, settings: state.settings };
+    var packed = toLSPayload(state.coupons, LS_BUDGET, state.savedAt);
+    var lsObj = JSON.parse(packed.json);
+    lsObj.settings = state.settings;
+    var lsJson = JSON.stringify(lsObj);
+    var mode = packed.mode, dropped = packed.dropped, lsOk = false;
+    try { window.localStorage.setItem(LS_KEY, lsJson); lsOk = true; }
+    catch (e1) {
+      var metaOnly = toLSPayload(state.coupons, 0, state.savedAt);
+      var j2 = JSON.parse(metaOnly.json);
+      j2.settings = state.settings;
+      try {
+        window.localStorage.setItem(LS_KEY, JSON.stringify(j2));
+        lsOk = true; mode = 'meta';
+        dropped = state.coupons.filter(function (c) { return !!c.thumb; }).length;
+      } catch (e2) { lsOk = false; }
+    }
+    return idbPut(full).then(function (ok) {
+      store.idbOk = ok; store.lsOk = lsOk; store.lsMode = mode; store.dropped = dropped; store.savedAt = state.savedAt;
+      updateStorageUI();
+      return { idb: ok, ls: lsOk, mode: mode };
+    });
+  }
+
+  function boot() {
+    render();
+    idbOpen().then(function () { return idbGet(); }).then(function (idbState) {
+      var lsState = null;
+      try {
+        var raw = window.localStorage.getItem(LS_KEY);
+        if (raw) lsState = JSON.parse(raw);
+      } catch (e) { lsState = null; }
+      var pick = pickBootState(idbState, lsState);
+      state.coupons = (pick.coupons || []).map(decorate);
+      if (pick.settings) {
+        state.settings = { alarmDays: [0, 3] };
+        for (var k in pick.settings) if (Object.prototype.hasOwnProperty.call(pick.settings, k)) state.settings[k] = pick.settings[k];
+      }
+      ui.bootNote = pick.note || '';
+      ui.bootAction = pick.action || '';
+      render();
+      return persistNow();
+    }).then(function () {
+      updateStorageUI();
+      if (!store.idbOk && !store.lsOk) {
+        toast('이 화면에서는 저장이 막혀 있어요. 웹 주소(http/https)로 열면 쿠폰이 저장돼요.', 6000);
+      }
+    }, function () {
+      store.idbOk = false;
+      updateStorageUI();
+    });
+  }
+
+  /* ── 화면 ── */
+  function visible() {
+    var list = state.coupons.filter(function (c) {
+      var st = statusOf(c);
+      var inTab = ui.tab === 'avail' ? !(c.used || st === 'expired') : (c.used || st === 'expired');
+      return inTab && matchCoupon(c, ui.q);
+    });
+    return sortCoupons(list);
+  }
+
+  function cardHTML(c, today) {
+    var b = badgeOf(c, today);
+    var st = statusOf(c, today);
+    var cls = 'card' + (c.used ? ' done' : '') + (st === 'expired' ? ' expired' : '');
+    var meta = [];
+    meta.push(c.expiry ? fmtDate(c.expiry) + ' 만료' : '만료일 없음');
+    if (c.isValue) meta.push('잔액 <span class="amt">' + fmtWon(c.balance) + '</span> / ' + fmtWon(c.initial));
+    var acts = '';
+    if (!c.used) {
+      if (c.isValue) acts += '<button class="btn brand" type="button" data-act="spend" data-id="' + c.id + '">잔액 사용</button>';
+      acts += '<button class="btn" type="button" data-act="toggle" data-id="' + c.id + '">사용 완료</button>';
+      if (c.expiry) acts += '<button class="btn soft" type="button" data-act="ics" data-id="' + c.id + '">알림</button>';
+    } else {
+      acts += '<button class="btn brand" type="button" data-act="toggle" data-id="' + c.id + '">되돌리기</button>';
+    }
+    acts += '<button class="btn soft" type="button" data-act="edit" data-id="' + c.id + '">수정</button>';
+
+    var bc;
+    if (c.code) {
+      bc = '<button class="bcbox" type="button" data-act="bc" data-id="' + c.id + '" aria-label="바코드 크게 보기">' +
+        '<canvas data-code="' + escHTML(c.code) + '"></canvas>' +
+        '<span class="code">' + escHTML(fmtCode(c.code)) + '</span></button>';
+    } else {
+      bc = '<div class="bcbox"><div class="code" style="padding:8px 0">쿠폰 번호 없이 저장됨</div></div>';
+    }
+    var title = (c.name && c.name !== c.brand) ? c.name : (c.brand || '기프티콘');
+    var showBrand = !!c.brand && title !== c.brand;
+    return '<article class="' + cls + '">' +
+      '<div class="c-head"><div class="txt">' +
+      (showBrand ? '<span class="c-brand">' + escHTML(c.brand) + '</span>' : '') +
+      '<div class="c-name">' + escHTML(title) + '</div>' +
+      '<div class="c-meta">' + meta.join(' · ') + '</div>' +
+      '</div><span class="dday ' + b.cls + '">' + escHTML(b.text) + '</span></div>' +
+      bc + '<div class="acts">' + acts + '</div></article>';
+  }
+
+  function render() {
+    var arr = visible();
+    var today = todayISO();
+    var html = '';
+    for (var i = 0; i < arr.length; i++) html += cardHTML(arr[i], today);
+    var listEl = $('list');
+    listEl.innerHTML = html;
+    paintBarcodes(listEl);
+
+    var avail = 0, done = 0;
+    for (var j = 0; j < state.coupons.length; j++) {
+      var c = state.coupons[j];
+      if (c.used || statusOf(c) === 'expired') done++; else avail++;
+    }
+    $('cntAvail').textContent = avail;
+    $('cntDone').textContent = done;
+    $('cntTop').textContent = state.coupons.length;
+
+    var emptyEl = $('empty');
+    emptyEl.hidden = arr.length > 0;
+    if (!arr.length) {
+      emptyEl.innerHTML = state.coupons.length
+        ? '<span class="big">🔎</span>조건에 맞는 기프티콘이 없어요.<br>검색어를 지우면 전체가 다시 보여요.'
+        : '<span class="big">🎁</span>등록된 기프티콘이 없어요.<br>아래 <b>기프티콘 등록</b>을 눌러<br>사진이나 번호로 넣어 보세요.';
+    }
+    renderInsight();
+    updateStorageUI();
+  }
+
+  function renderInsight() {
+    var soon = 0, expired = 0;
+    for (var i = 0; i < state.coupons.length; i++) {
+      var c = state.coupons[i];
+      if (c.used) continue;
+      var d = daysLeft(c.expiry);
+      if (d === null) continue;
+      if (d < 0) expired++;
+      else if (d <= 7) soon++;
+    }
+    var el = $('insight');
+    if (!soon && !expired) { el.hidden = true; return; }
+    el.hidden = false;
+    var t = [];
+    if (soon) t.push('<b>' + soon + '개</b>가 7일 안에 만료돼요');
+    if (expired) t.push('만료 ' + expired + '개');
+    $('insightTxt').innerHTML = t.join(' · ');
+  }
+
+  function updateStorageUI() {
+    var cnt = state.coupons.length;
+    $('stCount').textContent = cnt;
+    if ($('dotIdb')) $('dotIdb').className = 'dot' + (store.idbOk ? '' : ' off');
+    if ($('dotLs')) $('dotLs').className = 'dot' + (store.lsOk ? '' : ' off');
+    if ($('stIdb')) $('stIdb').textContent = store.idbOk ? (cnt + '개 · ' + timeStr(store.savedAt)) : '사용할 수 없음';
+    var hasThumb = false;
+    for (var i = 0; i < state.coupons.length; i++) if (state.coupons[i].thumb) { hasThumb = true; break; }
+    var modeTxt = store.lsMode === 'full' ? '사진 포함' : (store.lsMode === 'partial' ? '사진 일부 제외' : (hasThumb ? '글자 정보만' : '전체'));
+    if ($('stLs')) $('stLs').textContent = store.lsOk ? (cnt + '개 · ' + timeStr(store.savedAt) + ' · ' + modeTxt) : '저장 실패 (용량 가득)';
+    if ($('stRec')) {
+      $('stRec').textContent = ui.bootNote ? '복구함' : (ui.bootAction === 'synced' ? '두 저장소 일치' : '없음');
+      $('stRec').title = ui.bootNote || '';
+    }
+    if ($('stNote')) {
+      if (!store.idbOk && !store.lsOk) {
+        $('stNote').textContent = '지금 브라우저가 저장을 막고 있어요. 화면을 닫으면 목록이 사라져요. 파일을 웹 주소(http/https)로 열면 두 저장소에 저장돼요.';
+      } else if (ui.bootNote) {
+        $('stNote').textContent = ui.bootNote;
+      }
+    }
+  }
+
+  /* ── 캔버스 그리기 ── */
+  function fitCanvas(cv, w, h) {
+    var dpr = window.devicePixelRatio || 1;
+    if (dpr > 3) dpr = 3;
+    cv.width = Math.max(1, Math.round(w * dpr));
+    cv.height = Math.max(1, Math.round(h * dpr));
+    cv.style.width = w + 'px';
+    cv.style.height = h + 'px';
+    var ctx = cv.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, w, h);
+    return ctx;
+  }
+  function drawBarcode(cv, code, w, h) {
+    if (!cv) return false;
+    var pat;
+    try { pat = code128(code); } catch (e) { return false; }
+    var total = 0, i;
+    for (i = 0; i < pat.length; i++) total += +pat.charAt(i);
+    var quiet = 10;
+    var modW = w / (total + quiet * 2);
+    var ctx = fitCanvas(cv, w, h);
+    ctx.fillStyle = '#0b0d0f';
+    var x = quiet * modW, bar = true;
+    for (i = 0; i < pat.length; i++) {
+      var bw = +pat.charAt(i) * modW;
+      if (bar) {
+        var x0 = Math.round(x), x1 = Math.round(x + bw);
+        ctx.fillRect(x0, 0, Math.max(1, x1 - x0), h);
+      }
+      x += bw;
+      bar = !bar;
+    }
+    /* 폭은 CSS(100%)에 맡겨 어떤 화면 폭에서도 넘치지 않게 한다 */
+    cv.style.width = '100%';
+    cv.style.height = h + 'px';
+    return true;
+  }
+  function drawQR(cv, text, w) {
+    if (!cv) return false;
+    var q;
+    try { q = qrMatrix(text); } catch (e) { return false; }
+    var quiet = 4, n = q.size + quiet * 2, mod = w / n;
+    var ctx = fitCanvas(cv, w, w);
+    ctx.fillStyle = '#0b0d0f';
+    for (var y = 0; y < q.size; y++) {
+      for (var x = 0; x < q.size; x++) {
+        if (!q.modules[y][x]) continue;
+        ctx.fillRect(Math.round((x + quiet) * mod), Math.round((y + quiet) * mod), Math.ceil(mod), Math.ceil(mod));
+      }
+    }
+    return true;
+  }
+  function paintBarcodes(root) {
+    var cvs = root.querySelectorAll('canvas[data-code]');
+    for (var i = 0; i < cvs.length; i++) {
+      var cv = cvs[i];
+      var w = cv.parentNode.clientWidth - 16;
+      if (!w || w < 40) w = 260;
+      drawBarcode(cv, cv.getAttribute('data-code'), w, 54);
+    }
+  }
+
+  /* ── 토스트·시트 ── */
+  var toastTimer = null;
+  function toast(msg, ms) {
+    var el = $('toast');
+    el.textContent = msg;
+    el.classList.add('on');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { el.classList.remove('on'); }, ms || 2600);
+  }
+  function openSheet(id) {
+    var el = $(id);
+    if (!el) return;
+    el.classList.add('on');
+    el.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSheet(id) {
+    var el = $(id);
+    if (!el) return;
+    el.classList.remove('on');
+    el.setAttribute('aria-hidden', 'true');
+    if (!document.querySelector('.sheetwrap.on')) document.body.style.overflow = '';
+  }
+  function ask(html, okText, cb) {
+    $('cfMsg').innerHTML = html;
+    $('cfOk').textContent = okText || '확인';
+    ui.confirmCb = cb || null;
+    openSheet('sheetConfirm');
+  }
+
+  /* ── 파일 ── */
+  function readAsDataURL(file) {
+    return new Promise(function (resolve) {
+      var fr = new FileReader();
+      fr.onload = function () { resolve(fr.result); };
+      fr.onerror = function () { resolve(null); };
+      fr.readAsDataURL(file);
+    });
+  }
+  function readAsText(file) {
+    return new Promise(function (resolve) {
+      var fr = new FileReader();
+      fr.onload = function () { resolve(String(fr.result || '')); };
+      fr.onerror = function () { resolve(''); };
+      fr.readAsText(file, 'utf-8');
+    });
+  }
+  function shrink(dataUrl, maxSide, quality) {
+    return new Promise(function (resolve) {
+      var img = new Image();
+      img.onload = function () {
+        try {
+          var r = Math.min(1, maxSide / Math.max(img.width, img.height));
+          var w = Math.max(1, Math.round(img.width * r)), h = Math.max(1, Math.round(img.height * r));
+          var cv = document.createElement('canvas');
+          cv.width = w; cv.height = h;
+          var ctx = cv.getContext('2d');
+          ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, w, h);
+          ctx.drawImage(img, 0, 0, w, h);
+          resolve(cv.toDataURL('image/jpeg', quality));
+        } catch (e) { resolve(null); }
+      };
+      img.onerror = function () { resolve(null); };
+      img.src = dataUrl;
+    });
+  }
+  function download(name, text, mime) {
+    try {
+      var blob = new Blob([text], { type: mime || 'text/plain;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = name;
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () { URL.revokeObjectURL(url); if (a.parentNode) a.parentNode.removeChild(a); }, 5000);
+    } catch (e) { toast('파일을 만들지 못했어요'); }
+  }
+
+  /* ── 사진 인식 ── */
+  function setOcr(msg, cls) {
+    var el = $('ocrStatus');
+    if (!el) return;
+    el.textContent = msg;
+    el.className = 'hint' + (cls ? ' ' + cls : '');
+  }
+  var tessPromise = null;
+  function loadTesseract() {
+    if (window.Tesseract) return Promise.resolve(window.Tesseract);
+    if (tessPromise) return tessPromise;
+    tessPromise = new Promise(function (resolve, reject) {
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
+      s.async = true;
+      s.onload = function () {
+        if (window.Tesseract) resolve(window.Tesseract);
+        else reject(new Error('tesseract missing'));
+      };
+      s.onerror = function () { reject(new Error('cdn blocked')); };
+      document.head.appendChild(s);
+      setTimeout(function () { if (!window.Tesseract) reject(new Error('timeout')); }, 20000);
+    });
+    tessPromise.then(null, function () { tessPromise = null; });
+    return tessPromise;
+  }
+  function runOCR(src) {
+    return loadTesseract().then(function (T) {
+      return T.createWorker('eng', 1, {}).then(function (worker) {
+        return worker.recognize(src).then(function (res) {
+          var text = (res && res.data && res.data.text) || '';
+          try { worker.terminate(); } catch (e) {}
+          return text;
+        }, function (err) {
+          try { worker.terminate(); } catch (e) {}
+          throw err;
+        });
+      });
+    });
+  }
+  function detectBarcode(src) {
+    if (!('BarcodeDetector' in window)) return Promise.resolve(null);
+    return new Promise(function (resolve) {
+      var BD = window.BarcodeDetector;
+      var fmts = ['qr_code', 'code_128', 'code_39', 'ean_13', 'ean_8', 'itf', 'codabar', 'upc_a', 'upc_e', 'code_93', 'data_matrix', 'aztec', 'pdf417'];
+      var p;
+      try { p = BD.getSupportedFormats ? BD.getSupportedFormats() : Promise.resolve(fmts); }
+      catch (e) { p = Promise.resolve(fmts); }
+      p.then(function (supported) {
+        var use = fmts.filter(function (f) { return !supported || supported.indexOf(f) >= 0; });
+        var det;
+        try { det = new BD({ formats: use.length ? use : ['qr_code'] }); } catch (e) { resolve(null); return; }
+        var img = new Image();
+        img.onload = function () {
+          det.detect(img).then(function (codes) {
+            resolve(codes && codes.length ? String(codes[0].rawValue || '') : null);
+          }, function () { resolve(null); });
+        };
+        img.onerror = function () { resolve(null); };
+        img.src = src;
+      }, function () { resolve(null); });
+    });
+  }
+  function autoRead() {
+    var src = ui.curImage || ui.rawImage;
+    if (!src) return Promise.resolve();
+    setOcr('사진에서 바코드를 찾는 중…', '');
+    var gotCode = null;
+    return detectBarcode(src).then(function (code) {
+      gotCode = code;
+      if (code) { $('fCode').value = fmtCode(code); updatePreview(); }
+      setOcr(gotCode ? '바코드를 읽었어요. 만료일도 찾아볼게요…' : '글자를 읽는 중이에요 (처음엔 몇 초 걸려요)', '');
+      return runOCR(src);
+    }).then(function (text) {
+      var p = parseCouponText(text || '');
+      var picked = [];
+      if (p.code && !gotCode) { $('fCode').value = fmtCode(p.code); picked.push('번호'); }
+      else if (gotCode) picked.push('번호');
+      if (p.expiry) { $('fExpiry').value = p.expiry; picked.push('만료일 ' + fmtDate(p.expiry)); }
+      if (p.brand && !trim($('fBrand').value)) { $('fBrand').value = p.brand; picked.push('브랜드'); }
+      var nameOk = /[가-힣]/.test(p.name) || !!p.brand;
+      if (p.name && nameOk && !trim($('fName').value)) { $('fName').value = p.name; picked.push('상품명'); }
+      updatePreview();
+      if (picked.length) setOcr('읽은 값 — ' + picked.join(' · ') + ' (다르면 고쳐 주세요)', 'ok');
+      else setOcr('사진에서 값을 찾지 못했어요. 아래에 직접 넣어 주세요.', 'err');
+    }, function () {
+      updatePreview();
+      setOcr(gotCode ? '번호만 읽었어요. 만료일은 직접 확인해 주세요.' : '인터넷이 없거나 사진 인식을 못 했어요. 직접 입력해 주세요.', gotCode ? 'ok' : 'err');
+    });
+  }
+
+  /* ── 등록·수정 ── */
+  function updatePreview() {
+    var code = trim($('fCode').value);
+    var cv = $('pvCanvas'), label = $('pvCode');
+    if (!code) {
+      if (cv) { var c0 = fitCanvas(cv, Math.max(200, cv.parentNode.clientWidth - 16), 46); }
+      label.textContent = '번호를 넣으면 바코드가 그려져요';
+      return;
+    }
+    label.textContent = fmtCode(code);
+    var w = Math.max(200, Math.min(420, (cv.parentNode.clientWidth || 300) - 16));
+    var ok;
+    if (ui.pv === 'qr') ok = drawQR(cv, code, Math.min(220, w));
+    else ok = drawBarcode(cv, code, w, 46);
+    if (!ok) label.textContent = '이 번호로는 그릴 수 없어요 (숫자·영문만 가능)';
+    if (ui.pv === 'qr' && ok) { cv.style.width = '220px'; cv.style.height = '220px'; cv.style.margin = '0 auto'; }
+    else cv.style.margin = '';
+  }
+
+  function openEdit(id) {
+    var c = id ? findCoupon(id) : null;
+    ui.editingId = c ? c.id : null;
+    $('editTitle').textContent = c ? '기프티콘 수정' : '기프티콘 등록';
+    $('fBrand').value = c ? c.brand : '';
+    $('fName').value = c ? c.name : '';
+    $('fCode').value = c ? fmtCode(c.code) : '';
+    $('fExpiry').value = c && c.expiry ? c.expiry : '';
+    $('fNote').value = c ? c.notes : '';
+    $('fIsValue').checked = !!(c && c.isValue);
+    $('fInit').value = c && c.isValue ? c.initial : '';
+    $('fBalance').value = c && c.isValue ? c.balance : '';
+    $('valueFields').hidden = !(c && c.isValue);
+    $('fPaste').value = '';
+    $('btnDelete').hidden = !c;
+    ui.rawImage = '';
+    ui.curImage = c ? (c.image || c.thumb || '') : '';
+    ui.curThumb = c ? (c.thumb || '') : '';
+    if (ui.curImage) {
+      $('thumbWrap').hidden = false;
+      $('thumbImg').src = ui.curImage;
+      $('btnReadImage').disabled = false;
+    } else {
+      $('thumbWrap').hidden = true;
+      $('thumbImg').removeAttribute('src');
+      $('btnReadImage').disabled = true;
+    }
+    var hasHist = !!(c && c.history && c.history.length);
+    $('histBox').hidden = !hasHist;
+    renderHistory($('histList'), c ? c.history : []);
+    setOcr('사진은 폰 밖으로 나가지 않아요. 이 브라우저 안에서만 번호와 만료일을 읽어요.', '');
+    $('fImage').value = '';
+    ui.pv = 'barcode';
+    var chips = document.querySelectorAll('[data-pv]');
+    for (var i = 0; i < chips.length; i++) chips[i].className = 'chip' + (chips[i].getAttribute('data-pv') === 'barcode' ? ' on' : '');
+    openSheet('sheetEdit');
+    setTimeout(updatePreview, 30);
+  }
+
+  function saveEdit() {
+    var brand = trim($('fBrand').value);
+    var name = trim($('fName').value);
+    var code = trim($('fCode').value);
+    var expiry = $('fExpiry').value || '';
+    var notes = trim($('fNote').value);
+    var isValue = $('fIsValue').checked;
+    if (!brand && !name) { toast('브랜드나 상품명 중 하나는 적어 주세요'); $('fBrand').focus(); return; }
+    if (expiry && !dateFromISO(expiry)) { toast('만료일을 다시 확인해 주세요'); $('fExpiry').value = ''; return; }
+    var init = Math.round(Number(digits($('fInit').value)) || 0);
+    var balRaw = digits($('fBalance').value);
+    var bal = balRaw ? Math.round(Number(balRaw)) : init;
+    if (isValue && !init && !bal) { toast('금액권이면 초기 금액을 넣어 주세요'); $('fInit').focus(); return; }
+    if (isValue && !init) init = bal;
+    if (isValue && bal > init) init = bal;
+
+    var isNew = !ui.editingId;
+    var c = ui.editingId ? findCoupon(ui.editingId) : null;
+    if (!c) { c = decorate({ id: uid(), history: [] }); state.coupons.push(c); }
+    c.brand = brand;
+    c.name = name;
+    c.code = digits(code).length >= 8 ? digits(code) : code;
+    c.expiry = expiry;
+    c.notes = notes;
+    c.isValue = isValue;
+    if (isValue) { c.initial = init; c.balance = bal; }
+    else { c.initial = 0; c.balance = 0; }
+    if (ui.curImage) c.image = ui.curImage;
+    if (ui.curThumb) c.thumb = ui.curThumb;
+    c.updatedAt = nowISO();
+    closeSheet('sheetEdit');
+    render();
+    persist();
+    toast(isNew ? '등록했어요' + (c.expiry ? ' · ' + fmtDate(c.expiry) + ' 만료' : '') : '수정했어요');
+  }
+
+  function renderHistory(el, hist) {
+    if (!el) return;
+    var h = (hist || []).slice().reverse(), html = '';
+    if (!h.length) html = '<li><span class="h-m">아직 차감 내역이 없어요</span></li>';
+    for (var i = 0; i < h.length; i++) {
+      var x = h[i];
+      var dt = x.at ? new Date(x.at) : null;
+      var when = dt && !isNaN(dt.getTime()) ? fmtDate(isoOf(dt)) : '';
+      html += '<li><span>' + escHTML(when) + (x.note ? ' · ' + escHTML(x.note) : '') + '</span><b>-' + fmtWon(x.amount) + '</b></li>';
+    }
+    el.innerHTML = html;
+  }
+
+  /* ── 잔액 ── */
+  function openBalance(id) {
+    var c = findCoupon(id);
+    if (!c || !c.isValue) return;
+    ui.balanceId = id;
+    $('bsTitle').textContent = (c.brand ? c.brand + ' ' : '') + (c.name || '금액권');
+    $('bsBalance').textContent = fmtWon(c.balance);
+    $('bsInit').textContent = fmtWon(c.initial);
+    $('bsExpiry').textContent = c.expiry ? fmtDate(c.expiry) : '없음';
+    $('bsAmount').value = '';
+    $('bsNote').value = '';
+    renderHistory($('bsHist'), c.history);
+    $('bsHistBox').hidden = !(c.history && c.history.length);
+    openSheet('sheetBalance');
+  }
+  function doSpend() {
+    var c = findCoupon(ui.balanceId);
+    if (!c) return;
+    var amt = Math.round(Number(digits($('bsAmount').value)) || 0);
+    var r = applySpend(c, amt, $('bsNote').value);
+    if (!r.ok) {
+      if (r.error === 'over') toast('잔액 ' + fmtWon(c.balance) + '보다 많이 쓸 수 없어요');
+      else toast('사용한 금액을 넣어 주세요');
+      return;
+    }
+    closeSheet('sheetBalance');
+    render();
+    persist();
+    toast(r.autoDone ? '잔액이 0원이 되어 사용 완료로 옮겼어요' : fmtWon(amt) + ' 차감 · 남은 잔액 ' + fmtWon(r.balance));
+  }
+
+  /* ── 바코드 크게 ── */
+  function openBarcode(c) {
+    $('bcTitle').textContent = (c.brand ? c.brand + ' ' : '') + (c.name || '기프티콘');
+    $('bcCode').textContent = c.code ? fmtCode(c.code) : '쿠폰 번호가 없어요';
+    openSheet('sheetBarcode');
+    var w = Math.min(520, Math.max(260, document.documentElement.clientWidth - 64));
+    var okBc = c.code ? drawBarcode($('bcCanvas'), c.code, w, 132) : false;
+    var qrCv = $('qrCanvas');
+    qrCv.parentNode.hidden = !c.code;
+    if (c.code) drawQR(qrCv, c.code, 232);
+    $('bcHint').textContent = okBc ? '화면 밝기를 올리고 점원에게 보여주세요.' : '이 번호로는 바코드를 그릴 수 없어요.';
+    $('bcCanvas').hidden = !okBc;
+  }
+
+  /* ── 캘린더(ics) ── */
+  function selectedDays() {
+    var days = [], boxes = $('dayGrid').querySelectorAll('input[type=checkbox]'), i;
+    for (i = 0; i < boxes.length; i++) if (boxes[i].checked) days.push(+boxes[i].value);
+    for (i = 0; i < ui.customDays.length; i++) if (days.indexOf(ui.customDays[i]) < 0) days.push(ui.customDays[i]);
+    days.sort(function (a, b) { return a - b; });
+    return days;
+  }
+  function renderCustomChips() {
+    var html = '';
+    for (var i = 0; i < ui.customDays.length; i++) {
+      html += '<button class="chip on" type="button" data-day="' + ui.customDays[i] + '">' + ui.customDays[i] + '일 전 ✕</button>';
+    }
+    $('customChips').innerHTML = html;
+  }
+  function updateIcsCount() {
+    var days = selectedDays();
+    var sel = 0, id;
+    for (id in ui.icsSel) if (ui.icsSel[id]) sel++;
+    var txt = '선택 쿠폰 ' + sel + '개 × 알림 ' + days.length + '개 = 이벤트 ' + (sel * days.length) + '개';
+    var today = todayISO(), past = 0;
+    for (var i = 0; i < state.coupons.length; i++) {
+      var c = state.coupons[i];
+      if (!ui.icsSel[c.id] || !c.expiry) continue;
+      for (var j = 0; j < days.length; j++) {
+        var when = addDaysISO(c.expiry, -days[j]);
+        if (when && when < today) past++;
+      }
+    }
+    if (past) txt += ' · 이미 지난 날 ' + past + '개는 캘린더에 안 보일 수 있어요';
+    $('icsCount').textContent = txt;
+  }
+  function openIcs(preselectId) {
+    var base = (state.settings.alarmDays && state.settings.alarmDays.length) ? state.settings.alarmDays : [0, 3];
+    var boxes = $('dayGrid').querySelectorAll('input[type=checkbox]');
+    for (var i = 0; i < boxes.length; i++) boxes[i].checked = base.indexOf(+boxes[i].value) >= 0;
+    ui.customDays = [];
+    renderCustomChips();
+    var list = sortCoupons(state.coupons.filter(function (c) { return !c.used && c.expiry && dateFromISO(c.expiry); }));
+    ui.icsSel = {};
+    var html = '';
+    if (!list.length) {
+      html = '<li><div class="check" style="border:0">만료일이 있는 사용 가능 쿠폰이 없어요.</div></li>';
+    } else {
+      for (var j = 0; j < list.length; j++) {
+        var c = list[j];
+        var on = preselectId ? (c.id === preselectId) : true;
+        ui.icsSel[c.id] = on;
+        html += '<li><label class="check"><input type="checkbox" data-ics="' + c.id + '"' + (on ? ' checked' : '') + '>' +
+          '<span class="ptxt">' + escHTML((c.brand ? c.brand + ' ' : '') + (c.name || '기프티콘')) +
+          '<span class="psub">' + escHTML(fmtDate(c.expiry)) + ' 만료</span></span></label></li>';
+      }
+    }
+    $('icsList').innerHTML = html;
+    updateIcsCount();
+    openSheet('sheetIcs');
+  }
+  function downloadIcs() {
+    var days = selectedDays();
+    if (!days.length) { toast('알림 날짜를 하나 이상 골라 주세요'); return; }
+    var list = state.coupons.filter(function (c) { return ui.icsSel[c.id]; });
+    if (!list.length) { toast('쿠폰을 하나 이상 골라 주세요'); return; }
+    var r = buildICS(list, days, { calName: '기프티콘 만료 알림' });
+    if (!r.events) { toast('만료일이 있는 쿠폰이 없어요'); return; }
+    download('gifticon-expiry-' + todayISO().replace(/-/g, '') + '.ics', r.text, 'text/calendar;charset=utf-8');
+    var keep = days.filter(function (d) { return d <= 14; });
+    if (keep.length) { state.settings.alarmDays = keep; persist(); }
+    closeSheet('sheetIcs');
+    toast('알림 ' + r.events + '개를 담았어요. 파일을 열면 캘린더에 들어가요.');
+  }
+
+  /* ── 백업 ── */
+  function exportJSON() {
+    var data = { app: 'gifticon-wallet', v: 1, exportedAt: nowISO(), count: state.coupons.length, coupons: state.coupons, settings: state.settings };
+    var json = JSON.stringify(data);
+    download('gifticon-backup-' + todayISO().replace(/-/g, '') + '.json', json, 'application/json;charset=utf-8');
+    toast('백업 파일을 만들었어요 (' + state.coupons.length + '개 · ' + Math.max(1, Math.round(utf8len(json) / 1024)) + 'KB)');
+  }
+
+  /* ── 이벤트 ── */
+  function bind() {
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || !t.closest) return;
+      var closer = t.closest('[data-close]');
+      if (closer) {
+        var wrap = closer.closest('.sheetwrap');
+        if (wrap) closeSheet(wrap.id);
+        return;
+      }
+      var act = t.closest('[data-act]');
+      if (!act) return;
+      var kind = act.getAttribute('data-act');
+      var c = findCoupon(act.getAttribute('data-id'));
+      if (!c) return;
+      if (kind === 'bc') openBarcode(c);
+      else if (kind === 'ics') openIcs(c.id);
+      else if (kind === 'edit') openEdit(c.id);
+      else if (kind === 'spend') openBalance(c.id);
+      else if (kind === 'toggle') {
+        c.used = !c.used;
+        c.usedAt = c.used ? nowISO() : '';
+        c.usedReason = c.used ? 'manual' : '';
+        c.updatedAt = nowISO();
+        render();
+        persist();
+        if (c.used) toast('사용 완료로 옮겼어요');
+        else if (c.isValue && c.balance <= 0) toast('되돌렸어요 · 잔액이 0원이라 수정에서 금액을 고쳐 주세요');
+        else toast('사용 가능으로 되돌렸어요');
+      }
+    });
+
+    $('fSearch').addEventListener('input', function () { ui.q = this.value; render(); });
+    $('fSearch').addEventListener('search', function () { ui.q = this.value; render(); });
+
+    $('tabAvail').addEventListener('click', function () { ui.tab = 'avail'; setTab(); });
+    $('tabDone').addEventListener('click', function () { ui.tab = 'done'; setTab(); });
+    function setTab() {
+      $('tabAvail').className = 'tab' + (ui.tab === 'avail' ? ' on' : '');
+      $('tabDone').className = 'tab' + (ui.tab === 'done' ? ' on' : '');
+      $('tabAvail').setAttribute('aria-selected', ui.tab === 'avail' ? 'true' : 'false');
+      $('tabDone').setAttribute('aria-selected', ui.tab === 'done' ? 'true' : 'false');
+      render();
+    }
+
+    $('btnAdd').addEventListener('click', function () { openEdit(null); });
+    $('btnSettings').addEventListener('click', function () { updateStorageUI(); openSheet('sheetSettings'); });
+    $('btnInsightIcs').addEventListener('click', function () { openIcs(); });
+
+    $('btnSave').addEventListener('click', saveEdit);
+    $('btnDelete').addEventListener('click', function () {
+      var id = ui.editingId;
+      if (!id) return;
+      ask('이 기프티콘을 지울까요?<br>되돌릴 수 없어요.', '지우기', function () {
+        state.coupons = state.coupons.filter(function (c) { return c.id !== id; });
+        closeSheet('sheetEdit');
+        render();
+        persist();
+        toast('지웠어요');
+      });
+    });
+
+    $('fIsValue').addEventListener('change', function () {
+      $('valueFields').hidden = !this.checked;
+    });
+    $('fCode').addEventListener('input', function () { updatePreview(); });
+    var pvChips = document.querySelectorAll('[data-pv]');
+    for (var i = 0; i < pvChips.length; i++) {
+      pvChips[i].addEventListener('click', function () {
+        ui.pv = this.getAttribute('data-pv');
+        var all = document.querySelectorAll('[data-pv]');
+        for (var k = 0; k < all.length; k++) all[k].className = 'chip' + (all[k].getAttribute('data-pv') === ui.pv ? ' on' : '');
+        updatePreview();
+      });
+    }
+
+    $('fImage').addEventListener('change', function (e) {
+      var f = e.target.files && e.target.files[0];
+      if (!f) return;
+      if (!/^image\//.test(f.type || '')) { toast('이미지 파일을 골라 주세요'); return; }
+      setOcr('사진을 준비하는 중…', '');
+      readAsDataURL(f).then(function (url) {
+        if (!url) { setOcr('사진을 읽지 못했어요. 직접 입력해 주세요.', 'err'); return; }
+        ui.rawImage = url;
+        $('thumbWrap').hidden = false;
+        $('thumbImg').src = url;
+        $('btnReadImage').disabled = false;
+        return Promise.all([shrink(url, 1000, 0.72), shrink(url, 240, 0.5)]).then(function (res) {
+          ui.curImage = res[0] || url;
+          ui.curThumb = res[1] || '';
+          $('thumbImg').src = ui.curImage;
+          return autoRead();
+        });
+      });
+    });
+    $('btnReadImage').addEventListener('click', function () { autoRead(); });
+
+    $('btnParsePaste').addEventListener('click', function () {
+      var p = parseCouponText($('fPaste').value);
+      var n = 0;
+      if (p.code) { $('fCode').value = fmtCode(p.code); n++; }
+      if (p.expiry) { $('fExpiry').value = p.expiry; n++; }
+      if (p.brand) { $('fBrand').value = p.brand; n++; }
+      if (p.name) { $('fName').value = p.name; n++; }
+      updatePreview();
+      toast(n ? n + '개 항목을 채웠어요. 확인하고 저장해 주세요.' : '번호나 만료일을 찾지 못했어요. 직접 넣어 주세요.');
+    });
+
+    $('btnSpend').addEventListener('click', doSpend);
+    var amtChips = document.querySelectorAll('[data-amt]');
+    for (var j = 0; j < amtChips.length; j++) {
+      amtChips[j].addEventListener('click', function () {
+        var v = this.getAttribute('data-amt');
+        var c = findCoupon(ui.balanceId);
+        if (v === 'all') $('bsAmount').value = c ? String(c.balance) : '';
+        else $('bsAmount').value = v;
+        var all = document.querySelectorAll('[data-amt]');
+        for (var k = 0; k < all.length; k++) all[k].className = 'chip' + (all[k] === this ? ' on' : '');
+      });
+    }
+
+    $('btnAddCustom').addEventListener('click', function () {
+      var v = Math.round(Number(digits($('fCustom').value)) || 0);
+      if (!v || v > 365) { toast('1~365 사이의 일 수를 넣어 주세요'); return; }
+      if (ui.customDays.indexOf(v) < 0) ui.customDays.push(v);
+      ui.customDays.sort(function (a, b) { return a - b; });
+      $('fCustom').value = '';
+      renderCustomChips();
+      updateIcsCount();
+    });
+    $('customChips').addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || !t.closest('[data-day]')) return;
+      var v = +t.closest('[data-day]').getAttribute('data-day');
+      ui.customDays = ui.customDays.filter(function (d) { return d !== v; });
+      renderCustomChips();
+      updateIcsCount();
+    });
+    $('icsList').addEventListener('change', function (e) {
+      var t = e.target;
+      if (!t || !t.getAttribute('data-ics')) return;
+      ui.icsSel[t.getAttribute('data-ics')] = t.checked;
+      updateIcsCount();
+    });
+    $('btnSelAll').addEventListener('click', function () {
+      var boxes = $('icsList').querySelectorAll('input[data-ics]');
+      for (var k = 0; k < boxes.length; k++) { boxes[k].checked = true; ui.icsSel[boxes[k].getAttribute('data-ics')] = true; }
+      updateIcsCount();
+    });
+    $('btnSelNone').addEventListener('click', function () {
+      var boxes = $('icsList').querySelectorAll('input[data-ics]');
+      for (var k = 0; k < boxes.length; k++) { boxes[k].checked = false; ui.icsSel[boxes[k].getAttribute('data-ics')] = false; }
+      updateIcsCount();
+    });
+    $('dayGrid').addEventListener('change', updateIcsCount);
+    $('btnIcsDownload').addEventListener('click', downloadIcs);
+    $('btnIcsAll').addEventListener('click', function () { closeSheet('sheetSettings'); openIcs(); });
+
+    $('btnExport').addEventListener('click', exportJSON);
+    $('fImport').addEventListener('change', function (e) {
+      var f = e.target.files && e.target.files[0];
+      e.target.value = '';
+      if (!f) return;
+      readAsText(f).then(function (text) {
+        var data = null;
+        try { data = JSON.parse(text); } catch (err) { data = null; }
+        var list = null;
+        if (Array.isArray(data)) list = data;
+        else if (data && Array.isArray(data.coupons)) list = data.coupons;
+        if (!list) { toast('이 파일에서는 쿠폰을 찾지 못했어요'); return; }
+        ui.importData = list.map(decorate);
+        $('imMsg').innerHTML = '이 파일에 쿠폰 <b>' + ui.importData.length + '개</b>가 있어요.<br>지금 등록된 쿠폰은 ' + state.coupons.length + '개예요. 어떻게 할까요?';
+        closeSheet('sheetSettings');
+        openSheet('sheetImport');
+      });
+    });
+    $('btnImMerge').addEventListener('click', function () {
+      var merged = mergeCoupons(state.coupons, ui.importData || []).map(decorate);
+      state.coupons = merged;
+      ui.importData = null;
+      closeSheet('sheetImport');
+      render();
+      persist();
+      toast('합쳤어요 · 모두 ' + merged.length + '개');
+    });
+    $('btnImReplace').addEventListener('click', function () {
+      ask('지금 등록된 모든 기프티콘을 지우고<br>파일 내용으로 바꿀까요?', '바꾸기', function () {
+        state.coupons = (ui.importData || []).map(decorate);
+        ui.importData = null;
+        closeSheet('sheetImport');
+        render();
+        persist();
+        toast('파일 내용으로 바꿨어요 · ' + state.coupons.length + '개');
+      });
+    });
+
+    $('cfOk').addEventListener('click', function () {
+      var cb = ui.confirmCb;
+      ui.confirmCb = null;
+      closeSheet('sheetConfirm');
+      if (cb) cb();
+    });
+    $('cfCancel').addEventListener('click', function () { ui.confirmCb = null; closeSheet('sheetConfirm'); });
+
+    $('btnBackupNow').addEventListener('click', function () {
+      persist().then(function (r) {
+        toast('저장했어요 · IndexedDB ' + (r.idb ? '정상' : '실패') + ' / localStorage ' + (r.ls ? '정상' : '실패'));
+      });
+    });
+
+    var deferred = null;
+    window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; });
+    $('btnInstall').addEventListener('click', function () {
+      if (deferred) {
+        deferred.prompt();
+        deferred = null;
+        return;
+      }
+      ask('브라우저 메뉴에서 <b>홈 화면에 추가</b>를 눌러 주세요.<br><br>크롬: 오른쪽 위 ⋮ → 홈 화면에 추가<br>사파리: 공유 → 홈 화면에 추가', '알겠어요', null);
+    });
+
+    var rTimer = null;
+    window.addEventListener('resize', function () {
+      if (rTimer) clearTimeout(rTimer);
+      rTimer = setTimeout(function () { paintBarcodes($('list')); }, 250);
+    });
+  }
+
+  function init() {
+    var v = $('verTxt');
+    if (v) v.textContent = VERSION;
+    bind();
+    boot();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>
